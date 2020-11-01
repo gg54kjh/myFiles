@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta charset="utf-8"> <meta content="width=device-width, initial-scale=1" name="viewport"> </head>
+ <body>
+   <div class="container">
+     <div class="box"> 
+         <style type="text/css">@import "https://cdn.jsdelivr.net/www.jsdelivr.com/b12b739cba83c021b7611978b6c944758e6c2aef/css/app.css?v=b12b739cba83c021b7611978b6c944758e6c2aef";
+  body{padding-top:100px; background-color:#F5FFFA}
+  input{width:750px; height:66px; padding:20px;border:1px solid rgb(183, 183, 183)}
+  input:focus{border-color: #F8663F}
+  input::-moz-placeholder {color: #b7b7b7}
+  input:focus::-moz-placeholder {color: #4C4C4C}
+  .icon-jsdelivr{margin-top:35px} 
+  .icon-jsdelivr, .icon-competitor, .input-wrapper, .box, .container{width:900px !important}
+  .icon-jsdelivr, .icon-competitor{padding-left:15px}
+  .container{border: 1px solid #B7B7B7; padding: 15px 25px 25px 25px; box-shadow: 5px 5px 15px 5px #A8ADAD; background: white}
+  .box{border: 0}
+</style>
+<div class="icon-competitor">
+  <p>RawGit</p>
+</div>
+<div class="input-wrapper">
+   <input class="input" placeholder="Paste a GitHub link here" type="text" onchange="conv()">
+</div>
+<div class="icon-jsdelivr">
+  <p>JSDELIVR <button style="margin-left: 530px;" onclick="cler()">Очистить</button></p>
+</div>
+<div class="input-wrapper">
+   <input class="input" placeholder="Get a jsDelivr link here" type="text">
+</div>
+  </div></div>
+<script>
+    function conv() {
+      var inp1 = document.querySelector('input'), inp2 = document.querySelectorAll('input')[1];
+      if(!inp1.value.match('https://github.com/gg54kjh/myFiles/blob'))
+         inp2.value = 'Sorry, this doesn\'t look like a valid GitHub link :(' 
+      else {
+         let x = inp1.value.replace('github.com', 'cdn.jsdelivr.net/gh').replace('/blob/', '@');
+         inp2.value = x
+      }
+    }
+    function cler() {
+       document.querySelector('input').value = document.querySelectorAll('input')[1].value = ''
+    }
+</script>
+</body></html>
