@@ -12,7 +12,7 @@ function unicodeToWin1251_UrlEncoded(s) {
 }
 
  var u = 'https://www.graycell.ru/simplemask.php?def='  +unicodeToWin1251_UrlEncoded(document.head.getAttribute('graycell'));
- location.href=u
+ setTimeout(()=>location.href=u, 500)
 
 
 
