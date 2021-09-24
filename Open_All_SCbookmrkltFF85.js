@@ -10,7 +10,9 @@ sp.style.cssText =
 sp.ondblclick = function() {
     this.remove()
 };
-sp.title='тильда - многокр. мигание текущ. эл-та + утолщ. border\nI - зелёный overlay на месте скрытого эл-та';
+sp.title=`тильда - многокр. мигание текущ. эл-та + утолщ. border
+I - зелёный overlay на месте скрытого эл-та
+z - эл-т получает z-index MAX`;
 
 function handleOutline(arg) {
     sp.innerHTML = elms.length;
@@ -50,11 +52,8 @@ function upd(a){
    sp.innerHTML=(a+1)+ '/' +elms.length 
 }
 function chekInv(){
-  if(elms[a].offsetWidth==0 || elms[a].offsetHeight==0) {
-   /*  if(getComputedStyle(elms[a]).MozBinding.includes('abp-elemhide?') ||
-       getComputedStyle(elms[a]).MozBinding.endsWith('.xml#foobarbazdummy")')) {return  2}
-     else {return 1} */
-      return 2
+  if(elms[a].offsetWidth==0 || elms[a].offsetHeight==0 || elms[a].matches('input.trns')) {
+     return 2
    } 
 }
 function addBorder (){
@@ -121,6 +120,14 @@ function closest (elm) {
     }
           return null;
 }
+function zIndex(){
+  var x=elms[a];
+  if(x.style.zIndex=='2147483647'){
+    x.style.zIndex=''; x.style.position=''
+  }
+  else {
+    x.style.zIndex='2147483647'; x.style.position='relative'; scroll(x)
+ }}  
 d.body.addEventListener('keydown', function(f) {
     if (f.keyCode == 27) {
         handleOutline(0);
@@ -133,7 +140,9 @@ d.body.addEventListener('keydown', function(f) {
     if (f.shiftKey)sc('up') ;
     if (f.ctrlKey) sc('down');
     if (f.keyCode==192) addBorder();
-    if(f.keyCode==73)  overlay(elms[a])
+    if(f.keyCode==73)  overlay(elms[a]);
+    if(f.keyCode==90) zIndex()
 });
 } else {document.getElementById('SCbookmrklt').remove()};
-    
+        
+
