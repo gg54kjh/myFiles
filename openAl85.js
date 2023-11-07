@@ -29,10 +29,10 @@ sp.ondblclick = function() {
   s.left=s.top='2px';
 };
 sp.title=`
-тильда - многокр. мигание текущ. эл-та + утолщ. border\n
-I - зелёный overlay на месте скрытого эл-та\n
-z - эл-т получает z-index MAX\n
-a - эл-т => в консоль` ;
+tilda - multiple blinking + fat border\n
+I - green overlay on hidden element\n
+z - element gets z-index MAX\n
+a - element => to console` ;
 
 function handleOutline(arg) {
     sp.innerHTML = elms.length;
