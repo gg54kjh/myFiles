@@ -28,10 +28,11 @@ sp.ondblclick = function() {
   s.left=='2px' ? (s.left='1280px', s.top='110px') :
   s.left=s.top='2px';
 };
-sp.title=`С‚РёР»СЊРґР° - РјРЅРѕРіРѕРєСЂ. РјРёРіР°РЅРёРµ С‚РµРєСѓС‰. СЌР»-С‚Р° + СѓС‚РѕР»С‰. border
-I - Р·РµР»С‘РЅС‹Р№ overlay РЅР° РјРµСЃС‚Рµ СЃРєСЂС‹С‚РѕРіРѕ СЌР»-С‚Р°
-z - СЌР»-С‚ РїРѕР»СѓС‡Р°РµС‚ z-index MAX
-a - СЌР»-С‚ => РІ РєРѕРЅСЃРѕР»СЊ` ;
+sp.title=`
+тильда - многокр. мигание текущ. эл-та + утолщ. border\n
+I - зелёный overlay на месте скрытого эл-та\n
+z - эл-т получает z-index MAX\n
+a - эл-т => в консоль` ;
 
 function handleOutline(arg) {
     sp.innerHTML = elms.length;
