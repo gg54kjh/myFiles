@@ -1,0 +1,18 @@
+<style>#div_rdo{position:fixed; display:inline; top:49%; left:49%; background:#F8F8FF; text-align:left;
+ padding:1%; border:1px solid #1f01f0; z-index:99999; transform: translate(-50%, -50%)}#div_rdo a{color:#55A1E0 !important;}</style>
+
+<H2 style="margin: 0 auto auto 33%">JAZZ</H2>
+<p><a target="_blank" href="http://79.120.39.202:8000/dixieland">Dixieland Radio</a> <a href="javascript:f=document.createElement('iframe'); f.src=''; f.style.cssText='height:600px;width:100%';
+document.body.appendChild(f); setTimeout(()=>{f.src='http://radcap.ru/playback-history/2/dixieland-ph.php'},500);void 0">●</a></p>
+
+<p><a target="_blank" href="http://kc3ol.me:8000/stream">Dixieland Oasis</a> <a href="javascript:f=document.createElement('iframe'); f.src=''; f.style.cssText='height:600px;width:100%';
+document.body.appendChild(f); setTimeout(()=>{f.src='https://onlineradiobox.com/us/dixiekandoasis/playlist/'}, 500);void 0">●</a></p>
+
+<p><a target="_blank" href="https://drive.uber.radio/uber/jjrdjangoreinhardt/icecast.audio">Django Reinhardt</a> <a href="javascript:f=document.createElement('iframe'); f.src=''; f.style.cssText='height:600px;width:100%';
+document.body.appendChild(f); setTimeout(()=>{f.src='https://onlineradiobox.com/ae/justjazzreinhardt/playlist/'}, 500);void 0">●</a></p>
+
+<p><a target="_blank" href="https://www.jango.com/music/Sidney+Bechet">Sidney Bechet Radio</a></p>
+
+<p><a target="_blank" href="https://www.jango.com/music/Bix+Beiderbecke">Bix Beiderbeckes</a></p>
+
+<p><a target="_blank" href="https://www.jango.com/music/Paul+Whiteman">Paul Whiteman</a></p>
