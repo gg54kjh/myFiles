@@ -1,5 +1,13 @@
 document.body.insertAdjacentHTML('beforeend',
-  `<div id="oo5"class="oo5"><style>#oo5{position:fixed;left:0;bottom:0;width:100%;height:100%;background:#99989B9C;z-index:99999}#oo5 input{width:500px}#oo5 button{font-size:30px;padding:2px 20px}#oo5 br+button{background:blue;margin-left:100px}</style><center style="padding-top:150px"><input type="text"><br><button id="bt1_">OK</button><button id="bt2_">Cancel</button></center></div>` );
+`<div id="oo5"class="oo5">
+  <style>
+   #oo5{position:fixed;left:0;bottom:0;width:100%;height:100%;background:#99989B9C;z-index:99999}
+   #oo5 input{width:500px}
+   #oo5 button{font-size:30px;padding:2px 20px}
+   #oo5 br+button{background:blue;margin-left:100px}
+  </style>
+  <center style="padding-top:150px"><input type="text"><br><button id="bt1_">OK</button><button id="bt2_">Cancel</button></center>
+</div>` );
  
 setTimeout(()=> {
   var d = document, inp = d.querySelector('#oo5 input');
@@ -21,17 +29,18 @@ var d = document,
     elms = [...d.querySelectorAll(p)],
     a = -1,
     sp = d.body.appendChild(document.createElement('span')); sp.className = 'oo5';
-sp.style.cssText =
-    'position:fixed;left:2px;top:2px;background:azure;padding:4px;z-index:2147483647;font-weight:700;font-size:1.7em';
+d.body.insertAdjacentHTML('beforeend', `<style class="oo5">
+  span.oo5 {position:fixed;left:2px;top:2px;background:azure;padding:4px;z-index:2147483647;font-weight:700;font-size:1.7em}
+  .fatbrd{border:3px solid crimson !important;outline:7px red solid !important;outline-offset:3px!important}
+ </style>`);
 sp.ondblclick = function() {
   var s=this.style;
-  s.left=='2px' ? (s.left='1280px', s.top='110px') :
-  s.left=s.top='2px';
+  s.left=='2px' ? (s.removeProperty('left'), s.right='4px', s.top='110px') :
+  (s.removeProperty('right'), s.left=s.top='2px');
 };
-sp.title=`
-тильда - многокр. мигание текущ. эл-та + утолщ. border\n
-I - зелёный overlay на месте скрытого эл-та\n
-z - эл-т получает z-index MAX\n
+sp.title=`тильда - многокр. мигание текущ. эл-та + утолщ. border
+I - зелёный overlay на месте скрытого эл-та
+z - эл-т получает z-index MAX
 a - эл-т => в консоль` ;
 
 function handleOutline(arg) {
@@ -52,20 +61,20 @@ function handleOutline(arg) {
             if(ELMS[i].getAttribute('type')=='^^'){ELMS[i].setAttribute('type', 'hidden')}
         }
     }
-};
+}
 handleOutline(1);
 
 function sc(arg) { 
   if(arg=='down'){
     if((a+1)==elms.length) a = -1;
-    a++; scroll(elms[a]); upd(a);
-    if(chekInv()==1)  flash('red'); if(chekInv()==2)  flash('#FFFF00')
+    a++; scroll(elms[a], 5); upd(a);
+    if(chekInv()==2)  flash('#FFFF00')
   }
   if(arg=='up'){
     if(a==-1) return;
     if(a==0) a = elms.length;
-    a--; scroll(elms[a]); upd(a);
-    if(chekInv()==1)  flash('red'); if(chekInv()==2)  flash('#FFFF00')
+    a--; scroll(elms[a], 5); upd(a);
+    if(chekInv()==2)  flash('#FFFF00')
   }
 }
 function upd(a){
@@ -76,31 +85,21 @@ function chekInv(){
      return 2
    } 
 }
-function addBorder (){
-  elms[a].style.border='3px solid crimson';
-  elms[a].style.outline='7px red solid';
-  elms[a].style.outlineOffset='3px';
-  var count = 0
-  elms[a].scrollIntoView(); scrollBy(0, -50);
-  var tempVis = elms[a].style.visibility;
-  setTimeout( function y(){
-     if(count==7){
-        elms[a].style.outline='2px red solid';
-        elms[a].style.outlineOffset='-3px';        
-        return;   
-     } 
-     elms[a].style.visibility='hidden';         
-     setTimeout(()=>elms[a].style.visibility=tempVis, 200) 
-     setTimeout(()=>y(), 400); count++
-  }, 400) 
-}
   
-function scroll (el){
-  var tempVis =  el.style.visibility;
-  el.scrollIntoView(); scrollBy(0, -50);
-  setTimeout(()=>el.style.visibility='hidden',350); 
-  setTimeout(()=>el.style.visibility='visible', 600)
-  setTimeout(()=>el.style.visibility='hidden', 850); setTimeout(()=>el.style.visibility=tempVis, 1100)
+function scroll (el, count, border){
+  var opa = el.style.opacity!='' ? el.style.opacity : 1,
+    re = el.getBoundingClientRect(), i = 0;
+  if (re.top <= 0 || re.bottom >= window.innerHeight)
+  { el.scrollIntoView(); scrollBy(0, -50) }
+  if (border=='border') {
+    el.classList.toggle('fatbrd')
+  }    
+  (function fn() { if (i==count) {i = 0; return} 
+       setTimeout(()=>{el.style.opacity = 0}, 120); 
+       setTimeout(()=> {
+          el.style.opacity = opa; i++; fn()
+       },220)
+  })()
 }
 
 function doVisible(el){
@@ -112,7 +111,7 @@ function doVisible(el){
            closest(el).style.setProperty('display', 'inline'); 
         }
       }
-    };
+    }
     if(getComputedStyle(el).visibility == 'hidden'){
       el.style.setProperty('visibility', 'visible');
     }
@@ -135,7 +134,7 @@ function overlay(u)  {
       var dv = d.createElement('div'); 
        dv.style.cssText='position:absolute; background:lime; opacity:0.4; z-index:2147483647; outline:2px solid green; outline-offset:-2px; border:1px solid green'; 
        dv.style.top=rec.top+window.scrollY+ 'px'; dv.style.left=rec.left+window.scrollX+ 'px'; dv.style.width=rec.width+ 'px'; dv.style.height=rec.height+ 'px';
-       d.body.append(dv);  dv.className='oo5'; scroll(dv)        
+       d.body.append(dv);  dv.className='oo5'; scroll(dv, 6)        
    }
 }   
 
@@ -152,23 +151,21 @@ function zIndex(){
     x.style.zIndex=''; x.style.position=''
   }
   else {
-    x.style.zIndex='2147483647'; x.style.position='relative'; scroll(x)
+    x.style.zIndex='2147483647'; x.style.position='relative'; scroll(x, 5)
  }}  
-d.body.addEventListener('keydown', function(f) {
+d.body.addEventListener('keydown', function mm(f) {
     if (f.keyCode == 27) {
         handleOutline(0);
-        d.body.removeEventListener('keydown', arguments.callee);
+        d.body.removeEventListener('keydown', mm);
         while(document.querySelector('.oo5')){
             document.querySelector('.oo5').remove()
          }
     }
     if (f.shiftKey)sc('up') ;
     if (f.ctrlKey) sc('down');
-    if (f.keyCode==192) addBorder();
+    if (f.keyCode==192) scroll(elms[a], 10, 'border');
     if(f.keyCode==73)  overlay(elms[a]);
     if(f.keyCode==90) zIndex();
     if(f.keyCode==65) console.log(elms[a])
 })  } }
-
-    
 
