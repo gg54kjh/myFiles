@@ -35,8 +35,8 @@ d.body.insertAdjacentHTML('beforeend', `<style class="oo5">
  </style>`);
 sp.ondblclick = function() {
   var s=this.style;
-  s.left=='2px' ? (s.removeProperty('left'), s.right='4px', s.top='110px') :
-  (s.removeProperty('right'), s.left=s.top='2px');
+  s.left == '2px' ? (s.left = (visualViewport.width-sp.offsetWidth-2) +'px', s.top = '110px') :
+   (s.left = '2px', s.top = '2px');
 };
 sp.title=`тильда - многокр. мигание текущ. эл-та + утолщ. border
 I - зелёный overlay на месте скрытого эл-та
