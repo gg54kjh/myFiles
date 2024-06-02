@@ -44,10 +44,8 @@ function gener() {
       var sp = document.querySelector('span.oo5');
       sp.ondblclick = function() {
          var s = this.style;
-         s.left == '2px' ? (s.removeProperty('left'), s.right =
-               '4px', s.top = '110px') :
-            (s.removeProperty('right'), s.left = '2px', s.top =
-               '2px');
+         s.left == '2px' ? (s.left = (visualViewport.width-sp.offsetWidth-2) +'px', s.top = '110px') :
+            (s.left = '2px', s.top = '2px');
       };
       sp.title =
          `тильда - многокр. мигание текущ. эл-та + утолщ. border
@@ -64,7 +62,6 @@ a - эл-т => в консоль`;
                elms[i].style.outline = '2px solid red';
                elms[i].style.outlineOffset = '-3px';
                doVisible(elms[i]);
-
             }
             if (arg == 0) {
                elms[i].setAttribute('style', elms[i].getAttribute(
@@ -122,14 +119,14 @@ a - эл-т => в консоль`;
          }
          (function fn() {
             if (i == count) {
-               i = 0;
+               i = 0; el.style.opacity = opa;
                return
             }
             setTimeout(() => {
                el.style.opacity = 0
             }, 120);
             setTimeout(() => {
-               el.style.opacity = opa;
+               el.style.opacity = 1;
                i++;
                fn()
             }, 220)
@@ -139,17 +136,18 @@ a - эл-т => в консоль`;
       function doVisible(el) {
          if (el.offsetWidth == 0 || el.offsetHeight == 0 ||
             getComputedStyle(el).visibility == 'hidden') {
-            if (getComputedStyle(el).display == 'none') {
+            el.style.outline = '2px red dotted';
+          //  if (getComputedStyle(el).display == 'none') {
                if (el.type == "hidden") {
-                  el.setAttribute('type', '^^')
-               } else {
-                  jQuery(el).toggle()
+                  el.setAttribute('type', '^^'); return
+               } 
+               else if (closest(el)) {
+                   jQuery(closest(el)).toggle(); return
                }
-            }
+           // }
             if (getComputedStyle(el).visibility == 'hidden') {
                el.style.setProperty('visibility', 'visible');
             }
-            el.style.outline = '2px red dotted';
             if (el.clienttWidth == 0 || el.clientHeight == 0) {
                el.style.cssText +=
                   ';width:auto !important; height:auto !important;';
@@ -178,7 +176,13 @@ a - эл-т => в консоль`;
             scroll(dv, 6)
          }
       }
-
+     function closest (elm) {
+         while (elm  && elm !== document) {
+            if (getComputedStyle(elm, '').display == 'none') return elm;
+            elm = elm.parentNode;
+         }
+          return null;
+      }
       function zIndex() {
          var x = elms[a];
          if (x.style.zIndex == '2147483647') {
