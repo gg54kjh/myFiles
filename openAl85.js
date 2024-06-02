@@ -94,10 +94,10 @@ function scroll (el, count, border){
   if (border=='border') {
     el.classList.toggle('fatbrd')
   }    
-  (function fn() { if (i==count) {i = 0; return} 
+  (function fn() { if (i==count) {i = 0; el.style.opacity = opa; return} 
        setTimeout(()=>{el.style.opacity = 0}, 120); 
        setTimeout(()=> {
-          el.style.opacity = opa; i++; fn()
+          el.style.opacity = 1; i++; fn()
        },220)
   })()
 }
