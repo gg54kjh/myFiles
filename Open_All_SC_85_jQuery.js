@@ -1,14 +1,16 @@
 document.body.insertAdjacentHTML('beforeend',
-   `<div id="oo5"class="oo5">
-  <style>
-   #oo5{position:fixed;left:0;bottom:0;width:100%;height:100%;background:#99989B9C;z-index:99999}
-   #oo5 input{width:500px; background:pink}
-   #oo5 button{font-size:30px;padding:2px 20px}
-   #oo5 br+button{background:blue;margin-left:100px}
-  </style>
-  <center style="padding-top:150px"><input type="text"><br><button id="bt1_">OK</button><button id="bt2_">Cancel</button></center>
-</div>`
-);
+ `<div id="oo5"class="oo5">
+   <style>
+    #oo5{position:fixed;left:0;bottom:0;width:100%;height:100%;background:#99989B9C;z-index:99999}
+    #oo5 input{width:500px; background:pink}
+    #oo5 button{font-size:30px;padding:2px 20px}
+    #oo5 br+button{background:blue;margin-left:100px}
+   </style>
+   <center style="padding-top:150px">
+    <input type="text" placeholder="jQuery"><br><button id="bt1_">OK</button>
+    <button id="bt2_">Cancel</button>
+   </center>
+ </div>`);
 
 var d = document,
    inp = d.querySelector('#oo5 input');
