@@ -33,14 +33,14 @@ setTimeout(() => {
 
 function gener() {
    var p = document.querySelector('#oo5 input').value;
-   if (p != '') {
+   if (p == '')  return;
       document.querySelector('#oo5').remove();
       var d = document,
          ELMS = d.querySelectorAll('*'),
          elms = [...d.querySelectorAll(p)],
          a = -1;
       jQuery('body').append(
-         '<span class="oo5"></span><style class="oo5">span.oo5{position:fixed;left:2px;top:2px;background:azure;padding:4px;z-index:2147483647;font-weight:700;font-size:1.7em}.fatbrd{border:3px solid crimson!important;outline:7px red solid!important;outline-offset:3px!important}.op_ac{opacity:0}</style>');
+         '<span class="oo5"></span><style class="oo5">span.oo5{position:fixed;left:2px;top:2px;background:azure;padding:4px;z-index:2147483647;font-weight:700;font-size:1.7em}.fatbrd{border:3px solid crimson!important;outline:7px red solid!important;outline-offset:3px!important}</style>');
       var sp = document.querySelector('span.oo5');
       sp.ondblclick = function() {
          var s = this.style;
@@ -137,14 +137,12 @@ a - эл-т => в консоль`;
          if (el.offsetWidth == 0 || el.offsetHeight == 0 ||
             getComputedStyle(el).visibility == 'hidden') {
             el.style.outline = '2px red dotted';
-          //  if (getComputedStyle(el).display == 'none') {
-               if (el.type == "hidden") {
+            if (el.type == "hidden") {
                   el.setAttribute('type', '^^'); return
-               } 
-               else if (closest(el)) {
+            } 
+            else if (closest(el)) {
                    jQuery(closest(el)).toggle(); return
-               }
-           // }
+            }
             if (getComputedStyle(el).visibility == 'hidden') {
                el.style.setProperty('visibility', 'visible');
             }
@@ -186,8 +184,7 @@ a - эл-т => в консоль`;
       function zIndex() {
          var x = elms[a];
          if (x.style.zIndex == '2147483647') {
-            x.style.zIndex = '';
-            x.style.position = ''
+            x.style.zIndex = '';  x.style.position = ''
          } else {
             x.style.zIndex = '2147483647';
             x.style.position = 'relative';
@@ -209,5 +206,4 @@ a - эл-т => в консоль`;
          if (f.keyCode == 90) zIndex();
          if (f.keyCode == 65) console.log(elms[a])
       })
-   }
 }
