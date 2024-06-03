@@ -1,13 +1,5 @@
 document.body.insertAdjacentHTML('beforeend',
-`<div id="oo5"class="oo5">
-  <style>
-   #oo5{position:fixed;left:0;bottom:0;width:100%;height:100%;background:#99989B9C;z-index:99999}
-   #oo5 input{width:500px}
-   #oo5 button{font-size:30px;padding:2px 20px}
-   #oo5 br+button{background:blue;margin-left:100px}
-  </style>
-  <center style="padding-top:150px"><input type="text"><br><button id="bt1_">OK</button><button id="bt2_">Cancel</button></center>
-</div>` );
+  `<div id="oo5"class="oo5"><style>#oo5{position:fixed;left:0;bottom:0;width:100%;height:100%;background:#99989B9C;z-index:99999}#oo5 input{width:500px}#oo5 button{font-size:30px;padding:2px 20px}#oo5 br+button{background:blue;margin-left:100px}</style><center style="padding-top:150px"><input type="text"><br><button id="bt1_">OK</button><button id="bt2_">Cancel</button></center></div>` );
  
 setTimeout(()=> {
   var d = document, inp = d.querySelector('#oo5 input');
@@ -22,21 +14,18 @@ setTimeout(()=> {
  
 function gener(){
 var p = document.querySelector('#oo5 input').value;
-if(p!='') {
+if(p=='') return;
 document.querySelector('#oo5').remove();
 var d = document,
-    ELMS = d.querySelectorAll('*'),
     elms = [...d.querySelectorAll(p)],
     a = -1,
     sp = d.body.appendChild(document.createElement('span')); sp.className = 'oo5';
-d.body.insertAdjacentHTML('beforeend', `<style class="oo5">
-  span.oo5 {position:fixed;left:2px;top:2px;background:azure;padding:4px;z-index:2147483647;font-weight:700;font-size:1.7em}
-  .fatbrd{border:3px solid crimson !important;outline:7px red solid !important;outline-offset:3px!important}
- </style>`);
+d.body.insertAdjacentHTML('beforeend', 
+    '<style class="oo5">span.oo5{position:fixed;left:2px;top:2px;background:azure;padding:4px;z-index:2147483647;font-weight:700;font-size:1.7em}.fatbrd{border:3px solid crimson!important;outline:7px red solid!important;outline-offset:2px!important;background:#fffb00de}');
 sp.ondblclick = function() {
   var s=this.style;
-  s.left == '2px' ? (s.left = (visualViewport.width-sp.offsetWidth-2) +'px', s.top = '110px') :
-   (s.left = '2px', s.top = '2px');
+  s.left=='2px' ? (s.left=(visualViewport.width-sp.offsetWidth-2)+'px', s.top='110px') :
+  s.left=s.top='2px';
 };
 sp.title=`тильда - многокр. мигание текущ. эл-та + утолщ. border
 I - зелёный overlay на месте скрытого эл-та
@@ -45,23 +34,22 @@ a - эл-т => в консоль` ;
 
 function handleOutline(arg) {
     sp.innerHTML = elms.length;
-    for (i = 0; i < ELMS.length; i++) {
+    for (i = 0; i < elms.length; i++) {
         if(arg==1) {
-            ELMS[i].setAttribute('style_', ELMS[i].getAttribute('style'));
-            if(elms.includes(ELMS[i])){
-               ELMS[i].style.outline = '2px solid red'; ELMS[i].style.outlineOffset='-3px';
-               doVisible(ELMS[i]);
-            }
+            elms[i].setAttribute('style_', elms[i].getAttribute('style'));
+            elms[i].style.outline = '2px solid red'; elms[i].style.outlineOffset='-3px';
+               doVisible(elms[i]);
         }
         if(arg==0){ 
-            ELMS[i].setAttribute('style', ELMS[i].getAttribute('style_'));
-            ELMS[i].removeAttribute('style_');
-            if(ELMS[i].getAttribute('style')==='null')  
-                  ELMS[i].removeAttribute('style');
-            if(ELMS[i].getAttribute('type')=='^^'){ELMS[i].setAttribute('type', 'hidden')}
+            elms[i].setAttribute('style', elms[i].getAttribute('style_'));
+            elms[i].removeAttribute('style_');
+            if(elms[i].getAttribute('style')==='null')  
+                  elms[i].removeAttribute('style');
+            if(elms[i].getAttribute('type')=='^^')
+                  elms[i].setAttribute('type', 'hidden')
         }
     }
-}
+};
 handleOutline(1);
 
 function sc(arg) { 
@@ -86,36 +74,40 @@ function chekInv(){
    } 
 }
   
-function scroll (el, count, border){
-  var opa = el.style.opacity!='' ? el.style.opacity : 1,
-    re = el.getBoundingClientRect(), i = 0;
-  if (re.top <= 0 || re.bottom >= window.innerHeight)
-  { el.scrollIntoView(); scrollBy(0, -50) }
-  if (border=='border') {
-    el.classList.toggle('fatbrd')
-  }    
-  (function fn() { if (i==count) {i = 0; el.style.opacity = opa; return} 
-       setTimeout(()=>{el.style.opacity = 0}, 120); 
-       setTimeout(()=> {
-          el.style.opacity = 1; i++; fn()
-       },220)
-  })()
+function scroll(el, count, border) {
+  var opa = el.style.opacity != '' ? el.style.opacity : 1,
+     re = el.getBoundingClientRect(),
+     i = 0;
+  if (re.top <= 0 || re.bottom >= window.innerHeight) {
+     el.scrollIntoView();
+     scrollBy(0, -50)
+  }
+  if (border == 'border') {
+     el.classList.toggle('fatbrd')
+  }
+  (function fn() {
+     if (i == count) {i = 0; el.style.opacity = opa; return}
+     setTimeout(() =>el.style.opacity = 0, 120);
+     setTimeout(() => {
+       el.style.opacity = 1; i++; fn()
+     }, 220)
+   })()
 }
 
 function doVisible(el){
   if(el.offsetWidth==0 || el.offsetHeight==0 || getComputedStyle(el).visibility == 'hidden'){
-    if(getComputedStyle(el).display=='none'){
-      if(el.type=="hidden") {el.setAttribute('type', '^^')}  
-      else {
+    el.style.outlineStyle='dotted'
+    if(el.type=="hidden") {el.setAttribute('type', '^^'); return}  
+    else {
         if(closest(el)) {
-           closest(el).style.setProperty('display', 'inline'); 
+          closest(el).style.setProperty('display', 'inline');
+          el.setAttribute('disp_', 1);
+          return     
         }
-      }
     }
     if(getComputedStyle(el).visibility == 'hidden'){
-      el.style.setProperty('visibility', 'visible');
+      el.style.setProperty('visibility', 'visible')
     }
-    el.style.outlineStyle='dotted'
     if(el.clienttWidth==0 || el.clientHeight==0){
       el.style.cssText+=';width:auto !important; height:auto !important;';
       el.parentNode.style.overflow='visible';
@@ -134,7 +126,7 @@ function overlay(u)  {
       var dv = d.createElement('div'); 
        dv.style.cssText='position:absolute; background:lime; opacity:0.4; z-index:2147483647; outline:2px solid green; outline-offset:-2px; border:1px solid green'; 
        dv.style.top=rec.top+window.scrollY+ 'px'; dv.style.left=rec.left+window.scrollX+ 'px'; dv.style.width=rec.width+ 'px'; dv.style.height=rec.height+ 'px';
-       d.body.append(dv);  dv.className='oo5'; scroll(dv, 6)        
+       d.body.append(dv);  dv.className='oo5'; scroll(dv, 5)        
    }
 }   
 
@@ -152,11 +144,16 @@ function zIndex(){
   }
   else {
     x.style.zIndex='2147483647'; x.style.position='relative'; scroll(x, 5)
- }}  
-d.body.addEventListener('keydown', function mm(f) {
+ }} 
+function changeDisplay(x) {
+   for(let s of elms)
+     s.hasAttribute('disp_')&&(s.style.display = x)    
+}
+ 
+d.body.addEventListener('keydown', function rr(f) {
     if (f.keyCode == 27) {
         handleOutline(0);
-        d.body.removeEventListener('keydown', mm);
+        d.body.removeEventListener('keydown', rr);
         while(document.querySelector('.oo5')){
             document.querySelector('.oo5').remove()
          }
@@ -164,8 +161,11 @@ d.body.addEventListener('keydown', function mm(f) {
     if (f.shiftKey)sc('up') ;
     if (f.ctrlKey) sc('down');
     if (f.keyCode==192) scroll(elms[a], 10, 'border');
-    if(f.keyCode==73)  overlay(elms[a]);
-    if(f.keyCode==90) zIndex();
-    if(f.keyCode==65) console.log(elms[a])
-})  } }
+    if (f.keyCode==73)  overlay(elms[a]);
+    if (f.keyCode==90) zIndex();
+    if (f.keyCode==65) console.log(elms[a])
+    if (f.key==1) changeDisplay('block')
+    if (f.key==2) changeDisplay('inline-block')
+    if (f.key==3) changeDisplay('flex')
+})}
 
