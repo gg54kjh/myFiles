@@ -5,7 +5,7 @@
 <p><a target="_blank" href="http://79.120.39.202:8000/dixieland">Dixieland Radio</a> <a href="javascript:f=document.createElement('iframe'); f.src=''; f.style.cssText='height:600px;width:100%';
 document.body.appendChild(f); setTimeout(()=>{f.src='http://radcap.ru/playback-history/2/dixieland-ph.php'},500);void 0">●</a></p>
 
-<p><a target="_blank" href="http://kc3ol.me:8000/stream">Dixieland Oasis</a> <a href="javascript:f=document.createElement('iframe'); f.src=''; f.style.cssText='height:600px;width:100%';
+<p><a target="_blank" href="http://108.86.185.142:8010/radio.mp3">Dixieland Oasis</a> <a href="javascript:f=document.createElement('iframe'); f.src=''; f.style.cssText='height:600px;width:100%';
 document.body.appendChild(f); setTimeout(()=>{f.src='https://onlineradiobox.com/us/dixiekandoasis/playlist/'}, 500);void 0">●</a></p>
 
 <p><a target="_blank" href="https://drive.uber.radio/uber/jjrdjangoreinhardt/icecast.audio">Django Reinhardt</a> <a href="javascript:f=document.createElement('iframe'); f.src=''; f.style.cssText='height:600px;width:100%';
