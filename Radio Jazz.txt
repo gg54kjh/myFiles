@@ -1,4 +1,4 @@
-<div id="div_rdo" class="mydiv_class mydrg" style="left: 614px; top: 278px;"><style>#div_rdo{position:fixed; display:inline; top:49%; left:49%; background:#F8F8FF; text-align:left;
+<style>#div_rdo{position:fixed; display:inline; top:49%; left:49%; background:#F8F8FF; text-align:left;
  padding:1%; border:1px solid #1f01f0; z-index:99999; transform: translate(-50%, -50%)}#div_rdo a{color:#55A1E0 !important;}</style>
 
 <h2 style="margin: 0 auto auto 33%">JAZZ</h2>
@@ -20,4 +20,4 @@ document.body.appendChild(f); setTimeout(()=>{f.src='https://onlineradiobox.com/
 <p><a target="_blank" href="https://s2.xrad.io:9646/;stream/1">Past Perfect Radio</a></p>
 
 <p><a target="_blank" href="https://www.jango.com/music/Paul+Whiteman">Paul Whiteman</a></p>
-</div>
+
