@@ -12,9 +12,16 @@ document.body.appendChild(f); setTimeout(()=>{f.src='https://onlineradiobox.com/
 
 <p><a target="_blank" href="http://wplayer.early1900s.org/">Dismuke early1900s</a></p>
 
+<p><a target="_blank" href="https://radio1920.stream.laut.fm/radio1920?ref=web-app">laut-fm Germ.</a> <a href="javascript:f=document.createElement('iframe'); f.src=''; f.style.cssText='height:600px;width:100%';
+document.body.appendChild(f); setTimeout(()=>{f.src='https://laut.fm/radio1920'}, 500);void 0">●</a></p>
+
 <p><a target="_blank" href="https://cast1.torontocast.com:1635/stream">Radio Nostalgia 78RPM</a></p>
 
 <p><a target="_blank" href="https://s2.xrad.io:9646/;stream/1">Past Perfect Radio</a></p>
 
-<p><a target="_blank" href="https://www.jango.com/music/Paul+Whiteman">Paul Whiteman</a></p>
+<p><a target="_blank" href="https://c18.radioboss.fm:8403/stream">Twente Gold</a> <a href="javascript:f=document.createElement('iframe'); f.src=''; f.style.cssText='height:600px;width:100%';
+document.body.appendChild(f); setTimeout(()=>{f.src='https://radio.menu/stations/twentegold-nl-radio-twente-gold/playlist/'}, 500);void 0">●</a></p>
 
+<p><a target="_blank" href="http://pureplay.cdnstream1.com/6004_64.aac">GotRadio Big Band</a></p>
+
+<p><a target="_blank" href="https://www.jango.com/music/Paul+Whiteman">Paul Whiteman</a></p>
