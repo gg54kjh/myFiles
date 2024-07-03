@@ -1,5 +1,5 @@
 <style>#div_rdo{position:fixed; display:inline; top:49%; left:49%; background:#F8F8FF; text-align:left; width: 460px;
- padding:1%; border:1px solid #1f01f0; z-index:99999; transform: translate(-50%, -50%)}#div_rdo a{color:#55A1E0 !important;}#l_t, #r_t{display: inline-block}#r_t{float: right}</style>
+ padding:1%; border:1px solid #1f01f0; z-index:99999; transform: translate(-50%, -50%)}#div_rdo a{color:#55A1E0 !important;}#div_rdo a:focus-visible{outline:none}#l_t, #r_t{display: inline-block}#r_t{float: right}</style>
 
 <div id="l_t">
 <p><a target="_blank" href="http://91.121.134.23:8100/;stream/1">Ретро ФМ</a></p>
