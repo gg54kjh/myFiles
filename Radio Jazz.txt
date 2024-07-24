@@ -1,4 +1,4 @@
-http://5.39.68.114:8046/;<style>#div_rdo{position:fixed; display:inline; top:49%; left:49%; background:#F8F8FF; text-align:left;
+<style>#div_rdo{position:fixed; display:inline; top:49%; left:49%; background:#F8F8FF; text-align:left;
  padding:1%; border:1px solid #1f01f0; z-index:99999; transform: translate(-50%, -50%)}#div_rdo a{color:#55A1E0 !important;}#div_rdo a:focus-visible{outline:none}#div_rdo p{display:inline-block}</style>
 
 <h2 style="margin: 0 auto auto 33%">JAZZ</h2>
