@@ -24,4 +24,5 @@ document.body.appendChild(f); setTimeout(()=>{f.src='https://radio.menu/stations
 
 <p><a target="_blank" href="http://pureplay.cdnstream1.com/6004_64.aac">GotRadio Big Band</a></p><br>
 
-<p><a target="_blank" href="https://www.jango.com/music/Paul+Whiteman">Paul Whiteman</a></p>
+<p><a target="_blank" href="https://hanseswing.stream.laut.fm/hanseswing">Hanseswing</a> <a href="javascript:f=document.createElement('iframe'); f.src=''; f.style.cssText='height:600px;width:100%';
+document.body.appendChild(f); setTimeout(()=>{f.src='https://laut.fm/hanseswing'}, 500);void 0">●</a></p>
