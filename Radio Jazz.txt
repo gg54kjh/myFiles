@@ -1,28 +1,33 @@
 <style>#div_rdo{position:fixed; display:inline; top:49%; left:49%; background:#F8F8FF; text-align:left;
- padding:1%; border:1px solid #1f01f0; z-index:99999; transform: translate(-50%, -50%)}#div_rdo a{color:#55A1E0 !important;}#div_rdo a:focus-visible{outline:none}#div_rdo p{display:inline-block}</style>
+ padding:1%; border:1px solid #1f01f0; z-index:99999; transform: translate(-50%, -50%)}#div_rdo a{color:#55A1E0 !important;}#div_rdo div{display:block}</style>
 
-<h2 style="margin: 0 auto auto 33%">JAZZ</h2>
+<div id="left" style="float:left">
+<h2 style="margin: 0 auto auto 13%">JAZZ</h2>
 <p><a target="_blank" href="http://79.120.39.202:8000/dixieland">Dixieland Radio</a> <a href="javascript:f=document.createElement('iframe'); f.src=''; f.style.cssText='height:600px;width:100%';
-document.body.appendChild(f); setTimeout(()=>{f.src='http://radcap.ru/playback-history/2/dixieland-ph.php'},500);void 0">●</a></p><br>
+document.body.appendChild(f); setTimeout(()=>{f.src='http://radcap.ru/playback-history/2/dixieland-ph.php'},500);void 0">●</a></p>
 
 <p><a target="_blank" href="http://108.86.185.142:8010/radio.mp3">Dixieland Oasis</a> <a href="javascript:f=document.createElement('iframe'); f.src=''; f.style.cssText='height:600px;width:100%';
-document.body.appendChild(f); setTimeout(()=>{f.src='https://onlineradiobox.com/us/dixiekandoasis/playlist/'}, 500);void 0">●</a></p><br>
+document.body.appendChild(f); setTimeout(()=>{f.src='https://onlineradiobox.com/us/dixiekandoasis/playlist/'}, 500);void 0">●</a></p>
 
-<p><a target="_blank" href="http://tess.fast-serv.com:8570/;">1920s Radio Network</a> <a target="_blank" href="https://www.fmradiofree.com/1920s-radio-network">● пр.</a></p><br>
+<p><a target="_blank" href="http://tess.fast-serv.com:8570/;">1920s Radio Network</a> <a target="_blank" href="https://www.fmradiofree.com/1920s-radio-network">● пр.</a></p>
 
-<p><a target="_blank" href="http://wplayer.early1900s.org/">Dismuke early1900s</a></p><br>
+<p><a target="_blank" href="http://wplayer.early1900s.org/">Dismuke early1900s</a></p>
 
-<p><a target="_blank" href="https://radio1920.stream.laut.fm/radio1920?ref=web-app">laut-fm Germ.</a> <a href="javascript:f=document.createElement('iframe'); f.src=''; f.style.cssText='height:600px;width:100%';
-document.body.appendChild(f); setTimeout(()=>{f.src='https://laut.fm/radio1920'}, 500);void 0">●</a></p><br>
+<p><a target="_blank" href="https://cast1.torontocast.com:1635/stream">Radio Nostalgia 78RPM</a> <a href="javascript:f=document.createElement('iframe'); f.src=''; f.style.cssText='height:600px;width:100%';
+document.body.appendChild(f); setTimeout(()=>{f.src='http://www.radio-nostalgia.torontocast.stream/'}, 500);void 0">●</a></p>
 
-<p><a target="_blank" href="https://cast1.torontocast.com:1635/stream">Radio Nostalgia 78RPM</a></p><br>
-
-<p><a target="_blank" href="http://5.39.68.114:8046/;">Past Perfect Radio</a></p><br>
-
-<p><a target="_blank" href="https://c18.radioboss.fm:8403/stream">Twente Gold</a> <a href="javascript:f=document.createElement('iframe'); f.src=''; f.style.cssText='height:600px;width:100%';
-document.body.appendChild(f); setTimeout(()=>{f.src='https://radio.menu/stations/twentegold-nl-radio-twente-gold/playlist/'}, 500);void 0">●</a></p><br>
-
-<p><a target="_blank" href="http://pureplay.cdnstream1.com/6004_64.aac">GotRadio Big Band</a></p><br>
+<p><a target="_blank" href="http://5.39.68.114:8046/;">Past Perfect Radio</a></p>
 
 <p><a target="_blank" href="https://hanseswing.stream.laut.fm/hanseswing">Hanseswing</a> <a href="javascript:f=document.createElement('iframe'); f.src=''; f.style.cssText='height:600px;width:100%';
 document.body.appendChild(f); setTimeout(()=>{f.src='https://laut.fm/hanseswing'}, 500);void 0">●</a></p>
+</div>
+
+<div id="right" style="float:right; margin-left:40px">
+<h2 style="margin: 0 auto auto 13%">MUSETTE</h2>    
+  <p><a target="_blank" href="https://alpes1-musette.ice.infomaniak.ch/alpes1-musette.aac">Alpes 1 - Musette</a></p>
+  
+  <p><a target="_blank" href="https://streams.rcbradio.net/RCBMUSETTE">RCB Musette</a></p>
+  
+  <p><a target="_blank" href="https://n09.rcs.revma.com/vwxcat5at18uv">RDL Musette</a></p>
+  </div>
+</div>
