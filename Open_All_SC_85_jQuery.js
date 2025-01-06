@@ -206,6 +206,6 @@ a - эл-т => в консоль`;
          if (f.keyCode == 192) scroll(elms[a], 10, 'border');
          if (f.keyCode == 73) overlay(elms[a]);
          if (f.keyCode == 90) zIndex();
-         if (f.keyCode == 65) console.log(elms[a])
+         if (f.keyCode == 65) setTimeout(console.log.bind(console, elms[a]))
       })
 }
