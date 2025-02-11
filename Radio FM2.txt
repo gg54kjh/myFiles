@@ -1,5 +1,5 @@
-<style>#div_rdo{position:fixed; display:inline; top:49%; left:49%; background:#F8F8FF; text-align:left; width: 460px;
- padding:1%; border:1px solid #1f01f0; z-index:99999; transform: translate(-50%, -50%)}#div_rdo a{color:#55A1E0 !important;}#div_rdo a:focus-visible{outline:none}#l_t, #r_t{display: inline-block}#r_t{float: right}</style>
+<style>#div_rdo{position:fixed; display:inline; top:49%; left:49%; background:#F8F8FF; text-align:left;
+ padding:1%; border:1px solid #1f01f0; z-index:99999; transform: translate(-50%, -50%)}#div_rdo a{color:#55A1E0 !important;}#l_t, #r_t{display: inline-block}#r_t{float: right; margin-left: 40px}</style>
 
 <div id="l_t">
 <p><a target="_blank" href="http://91.121.134.23:8100/;stream/1">Ретро ФМ</a></p>
@@ -17,10 +17,6 @@ document.body.appendChild(f); setTimeout(()=>{f.src='https://onlineradiobox.com/
 <p><a target="_blank" href="https://drive.uber.radio/uber/boomerang1930s/icecast.audio">Boomerang 30's</a> <a href="javascript:f=document.createElement('iframe'); f.src=''; f.style.cssText='height:600px;width:100%';document.body.appendChild(f); setTimeout(()=>{f.src='https://onlineradiobox.com/ae/boomerang30s/playlist/'}, 500);void 0">●</a></p>
 </div>
 <div id="r_t">
-<p><a target="_blank" href="http://live2.jupinfo.fr:8000/radioaccordeon">Radio Accordeon fr</a> <a href="javascript:f=document.createElement('iframe'); f.src=''; f.style.cssText='height:600px;width:100%';document.body.appendChild(f); setTimeout(()=>{f.src='https://radioaccordeon.com/'}, 500);void 0">●</a></p>
-
-<p><a target="_blank" href="https://impactfm-musette.ice.infomaniak.ch/impactfm-musette-64.aac">Impact musette</a> <a href="javascript:f=document.createElement('iframe'); f.src=''; f.style.cssText='height:600px;width:100%';document.body.appendChild(f); setTimeout(()=>{f.src='https://onlineradiobox.com/fr/variancemusette/playlist/'}, 500);void 0">●</a></p>
-
 <p><a target="_blank" href="http://c6.radioboss.fm:8098/stream">Donat FM - СССР</a> <a href="javascript:f=document.createElement('iframe'); f.src=''; f.style.cssText='height:600px;width:100%';
 document.body.appendChild(f); setTimeout(()=>{f.src='https://radiovolna.net/playlist/405830-donat-fm-retro.html'}, 500);void 0">●</a></p>
 
@@ -35,4 +31,11 @@ document.body.appendChild(f); setTimeout(()=>{f.src='https://www.radiorecord.fm/
 
 <p><a target="_blank" href="http://stream128.melodiafm.spb.ru:8000/melodia128">Мелодия</a> <a href="javascript:f=document.createElement('iframe'); f.src=''; f.style.cssText='height:600px;width:100%';
 document.body.appendChild(f); setTimeout(()=>{f.src='https://dancemelody.ru/melodiaspb'}, 500);void 0">●</a></p>
+
+<p><a target="_blank" href="https://sovetskie-pesni.ru:8005/stream">Советские Песни</a></p>
+
+<p><a target="_blank" href="https://evcast.mediacp.eu:2075/stream">Советская эстрада 70-80</a> <a target="_blank" href="https://radiopotok.ru/radio/1959">● пр.</a></p>
+
+<p><a target="_blank" href="https://rodpesni.amgradio.ru/rp">Родные Песни</a> <a target="_blank" href="https://radiopotok.ru/RodnyePesni">● пр.</a></p>
+
 </div>
