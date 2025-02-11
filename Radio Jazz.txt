@@ -29,5 +29,10 @@ document.body.appendChild(f); setTimeout(()=>{f.src='https://laut.fm/hanseswing'
   <p><a target="_blank" href="https://streams.rcbradio.net/RCBMUSETTE">RCB Musette</a></p>
   
   <p><a target="_blank" href="https://n09.rcs.revma.com/vwxcat5at18uv">RDL Musette</a></p>
+
+<p><a target="_blank" href="http://live2.jupinfo.fr:8000/radioaccordeon">Radio Accordeon fr</a> <a href="javascript:f=document.createElement('iframe'); f.src=''; f.style.cssText='height:600px;width:100%';document.body.appendChild(f); setTimeout(()=>{f.src='https://radioaccordeon.com/'}, 500);void 0">●</a></p>
+
+<p><a target="_blank" href="https://proxy-eu.webradio.tools/radio.variancefm.com:8290/variancemusette">Impact musette</a> <a href="javascript:f=document.createElement('iframe'); f.src=''; f.style.cssText='height:600px;width:100%';document.body.appendChild(f); setTimeout(()=>{f.src='https://onlineradiobox.com/fr/variancemusette/playlist/'}, 500);void 0">●</a></p>
+
   </div>
 </div>
