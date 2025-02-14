@@ -23,11 +23,14 @@ document.body.appendChild(f); setTimeout(()=>{f.src='https://radiovolna.net/play
 <p><a target="_blank" href="https://listen4.myradio24.com/alexx777ru">Радио Тройка</a> <a href="javascript:f=document.createElement('iframe'); f.src=''; f.style.cssText='height:600px;width:100%';
 document.body.appendChild(f); setTimeout(()=>{f.src='https://top-radio.ru/web/radio-trojka#playlist'}, 500);void 0">●</a></p>
 
-<p><a target="_blank" href="https://stream.cassiopeia-station.ru:4565/stream">Всесоюзное</a> <a href="javascript:f=document.createElement('iframe'); f.src=''; f.style.cssText='height:600px;width:100%';
+<p><a target="_blank" href="https://stream.cassiopeia-station.ru:1045/stream">Всесоюзное</a> <a href="javascript:f=document.createElement('iframe'); f.src=''; f.style.cssText='height:600px;width:100%';
 document.body.appendChild(f); setTimeout(()=>{f.src='https://cassiopeia-station.ru/ussr/'}, 500);void 0">●</a></p>
 
 <p><a target="_blank" href="https://radiorecord.hostingradio.ru/naft96.aacp">Нафталин</a> <a href="javascript:f=document.createElement('iframe'); f.src=''; f.style.cssText='height:600px;width:100%';
 document.body.appendChild(f); setTimeout(()=>{f.src='https://www.radiorecord.fm/playlist.php?chan=naft'}, 500);void 0">●</a></p>
+
+<p><a target="_blank" href="https://icecast-vgtrk.cdnvideo.ru/unost_mp3_128kbps">Радио Юность
+</a></p>
 
 <p><a target="_blank" href="http://stream128.melodiafm.spb.ru:8000/melodia128">Мелодия</a> <a href="javascript:f=document.createElement('iframe'); f.src=''; f.style.cssText='height:600px;width:100%';
 document.body.appendChild(f); setTimeout(()=>{f.src='https://dancemelody.ru/melodiaspb'}, 500);void 0">●</a></p>
