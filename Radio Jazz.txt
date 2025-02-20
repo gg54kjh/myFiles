@@ -18,6 +18,8 @@ document.body.appendChild(f); setTimeout(()=>{f.src='http://www.radio-nostalgia.
 
 <p><a target="_blank" href="http://5.39.68.114:8046/;">Past Perfect Radio</a></p>
 
+<p><a target="_blank" href="https://carol.epichosts.co.uk:8532/live.mp3">WRJQ Goodtime polka</a> <a target="_blank" href="https://onlineradiobox.com/us/wrjqgoodtime/playlist/">● пр.</a></p>
+
 <p><a target="_blank" href="https://hanseswing.stream.laut.fm/hanseswing">Hanseswing</a> <a href="javascript:f=document.createElement('iframe'); f.src=''; f.style.cssText='height:600px;width:100%';
 document.body.appendChild(f); setTimeout(()=>{f.src='https://laut.fm/hanseswing'}, 500);void 0">●</a></p>
 </div>
