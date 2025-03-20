@@ -13,8 +13,7 @@ document.body.appendChild(f); setTimeout(()=>{f.src='https://onlineradiobox.com/
 
 <p><a target="_blank" href="http://wplayer.early1900s.org/">Dismuke early1900s</a></p>
 
-<p><a target="_blank" href="https://cast1.torontocast.com:1635/stream">Radio Nostalgia 78RPM</a> <a href="javascript:f=document.createElement('iframe'); f.src=''; f.style.cssText='height:600px;width:100%';
-document.body.appendChild(f); setTimeout(()=>{f.src='http://www.radio-nostalgia.torontocast.stream/'}, 500);void 0">●</a></p>
+<p><a target="_blank" href="http://www.radio-nostalgia.torontocast.stream/">Radio Nostalgia 78RPM</a></p>
 
 <p><a target="_blank" href="http://5.39.68.114:8046/;">Past Perfect Radio</a></p>
 
