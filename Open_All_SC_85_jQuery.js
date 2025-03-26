@@ -82,18 +82,16 @@ a - эл-т => в консоль`;
       function sc(arg) {
          if (arg == 'down') {
             if ((a + 1) == elms.length) a = -1;
-            a++;
-            scroll(elms[a], 5);
+            a++; 
+            chekInv()==2 ? flash('#FFFF00') : scroll(elms[a], 5); 
             upd(a);
-            if (chekInv() == 2) flash('#FFFF00')
          }
          if (arg == 'up') {
             if (a == -1) return;
             if (a == 0) a = elms.length;
-            a--;
-            scroll(elms[a], 5);
+            a--; 
+            chekInv()==2 ? flash('#FFFF00') : scroll(elms[a], 5); 
             upd(a);
-            if (chekInv() == 2) flash('#FFFF00')
          }
       }
 
