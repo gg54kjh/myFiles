@@ -24,6 +24,8 @@ document.body.appendChild(f); setTimeout(()=>{f.src='https://onlineradiobox.com/
 <p><a target="_blank" href="https://blasmusikradio.stream.laut.fm/blasmusikradio">Blasmusik</a></p>
 
 <p><a target="_blank" href="http://stream.bayerwaldradio.com/allesblasmusik">Bayerwaldradio</a></p>
+
+<p><a target="_blank" href="http://streams.radioriel.org:8020/stream">Регтайм</a> <a target="_blank" href="https://onlineradiobox.com/us/rielragtime/playlist/">● пр.</a></p>
 </div>
 
 <div id="right" style="float:right; margin-left:40px">
