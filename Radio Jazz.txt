@@ -13,9 +13,9 @@ document.body.appendChild(f); setTimeout(()=>{f.src='https://onlineradiobox.com/
 
 <p><a target="_blank" href="https://radio1920.stream.laut.fm/radio1920">1920s Radio</a> <a target="_blank" href="https://laut.fm/radio1920">● пр.</a></p>
 
-<p><a target="_blank" href="http://wplayer.early1900s.org/">Dismuke early1900s</a></p>
+<p><a target="_blank" href="http://74.208.228.126:8020/;stream.mp3">Dismuke early1900s</a> <a target="_blank" href="http://wplayer.early1900s.org/">● пр.</a></p>
 
-<p><a target="_blank" href="http://www.radio-nostalgia.torontocast.stream/">Radio Nostalgia 78RPM</a></p>
+<p><a target="_blank" href="https://cast1.torontocast.com:1635/stream">Radio Nostalgia 78RPM</a> <a target="_blank" href="http://www.radio-nostalgia.torontocast.stream/">● пр.</a></p>
 
 <p><a target="_blank" href="http://5.39.68.114:8046/;">Past Perfect Radio</a></p>
 
