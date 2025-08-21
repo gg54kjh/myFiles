@@ -3,11 +3,9 @@
 
 <div id="left" style="float:left">
 <h2 style="margin: 0 auto auto 13%">JAZZ</h2>
-<p><a target="_blank" href="http://79.120.39.202:8000/dixieland">Dixieland Radio</a> <a href="javascript:f=document.createElement('iframe'); f.src=''; f.style.cssText='height:600px;width:100%';
-document.body.appendChild(f); setTimeout(()=>{f.src='http://radcap.ru/playback-history/2/dixieland-ph.php'},500);void 0">●</a></p>
+<p><a target="_blank" href="http://79.120.39.202:8000/dixieland">Dixieland Radio</a> <a href="http://radcap.ru/playback-history/2/dixieland-ph.php">●</a></p>
 
-<p><a target="_blank" href="http://108.86.185.142:8010/radio.mp3">Dixieland Oasis</a> <a href="javascript:f=document.createElement('iframe'); f.src=''; f.style.cssText='height:600px;width:100%';
-document.body.appendChild(f); setTimeout(()=>{f.src='https://onlineradiobox.com/us/dixiekandoasis/playlist/'}, 500);void 0">●</a></p>
+<p><a target="_blank" href="http://108.86.185.142:8010/radio.mp3">Dixieland Oasis</a> <a href="https://onlineradiobox.com/us/dixiekandoasis/playlist/">●</a></p>
 
 <p><a target="_blank" href="http://s6.voscast.com:11312/;">Swing Street</a></p>
 
@@ -36,9 +34,11 @@ document.body.appendChild(f); setTimeout(()=>{f.src='https://onlineradiobox.com/
   
   <p><a target="_blank" href="https://n09.rcs.revma.com/vwxcat5at18uv">RDL Musette</a></p>
 
-<p><a target="_blank" href="http://live2.jupinfo.fr:8000/radioaccordeon">Radio Accordeon fr</a> <a href="javascript:f=document.createElement('iframe'); f.src=''; f.style.cssText='height:600px;width:100%';document.body.appendChild(f); setTimeout(()=>{f.src='https://radioaccordeon.com/'}, 500);void 0">●</a></p>
+<p><a target="_blank" href="http://live2.jupinfo.fr:8000/radioaccordeon">Radio Accordeon fr</a> <a href="https://radioaccordeon.com/">●</a></p>
 
-<p><a target="_blank" href="https://proxy-eu.webradio.tools/radio.variancefm.com:8290/variancemusette">Impact musette</a> <a href="javascript:f=document.createElement('iframe'); f.src=''; f.style.cssText='height:600px;width:100%';document.body.appendChild(f); setTimeout(()=>{f.src='https://onlineradiobox.com/fr/variancemusette/playlist/'}, 500);void 0">●</a></p>
+<p><a target="_blank" href="https://impactfm-musette.ice.infomaniak.ch/impactfm-musette-64.aac">Impact FM - Musette</a> <a href="https://onlineradiobox.com/fr/impactfm100mus/playlist/">●</a></p>
+
+<p><a target="_blank" href="https://proxy-eu.webradio.tools/radio.variancefm.com:8290/variancemusette">Variance musette</a> <a href="https://onlineradiobox.com/fr/variancemusette/playlist/">●</a></p>
 
   </div>
 </div>
