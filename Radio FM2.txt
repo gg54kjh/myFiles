@@ -2,18 +2,17 @@
  padding:1%; border:1px solid #1f01f0; z-index:99999; transform: translate(-50%, -50%)}#div_rdo a{color:#55A1E0 !important;}#l_t, #r_t{display: inline-block}#r_t{float: right; margin-left: 40px}</style>
 
 <div id="l_t">
-<p><a target="_blank" href="http://91.121.134.23:8100/;stream/1">Ретро ФМ</a></p>
 <p><a target="_blank" href="https://ais-edge37-live365-dal02.cdnstream.com/a43564">Cladrite Radio</a> <a href="https://onlineradiobox.com/us/cladriteradio/playlist/">●</a></p>
 
 <p><a target="_blank" href="https://streaming.live365.com/a03438">Swing City Radio</a></p>
 
 <p><a target="_blank" href="https://streaming.positivity.radio/pr/1920/icecast.audio">Positively 20's</a></p>
 
-<p><a target="_blank" href="https://drive.uber.radio/uber/boomerang1920s/icecast.audio">Boomerang 20's</a> <a href="https://onlineradiobox.com/ae/boomerang20s/playlist/">●</a></p>
+<p><a target="_blank" href="https://2.mystreaming.net/uber/boomerang1920s/icecast.audio">Boomerang 20's</a> <a href="https://onlineradiobox.com/ae/boomerang20s/playlist/">●</a></p>
 
 <p><a target="_blank" href="https://streaming.positivity.radio/pr/1930/icecast.audio">Positively 30's</a></p>
 
-<p><a target="_blank" href="https://drive.uber.radio/uber/boomerang1930s/icecast.audio">Boomerang 30's</a> <a href="https://onlineradiobox.com/ae/boomerang30s/playlist/">●</a></p>
+<p><a target="_blank" href="https://nl4.mystreaming.net/uber/boomerang1930s/icecast.audio?FRhttps://onlineradiobox.com/ae/boomerang30s/playlist/#Boomerang 30s">Boomerang 30's</a> <a href="https://onlineradiobox.com/ae/boomerang30s/playlist/">●</a></p>
 </div>
 <div id="r_t">
 <p><a target="_blank" href="http://c6.radioboss.fm:8098/stream">Donat FM - СССР</a> <a href="https://radiovolna.net/playlist/405830-donat-fm-retro.html">●</a></p>
@@ -36,3 +35,4 @@
 <p><a target="_blank" href="https://rodpesni.amgradio.ru/rp">Родные Песни</a> <a target="_blank" href="https://radiopotok.ru/RodnyePesni">● пр.</a></p>
 
 </div>
+
