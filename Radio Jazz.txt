@@ -23,6 +23,8 @@
 
 <p><a target="_blank" href="http://stream.bayerwaldradio.com/allesblasmusik">Bayerwaldradio</a></p>
 
+<p><a target="_blank" href="http://vtuner.com/setupapp/guide/asp/BrowseStations/dynampls.asp?id=48445&k=701065325dbb8e2dcb453180abe90bf1a89ba5962e9994f03f688e543dba6ee3">Schwany 4 Blasmusik</a></p>
+
 <p><a target="_blank" href="http://streams.radioriel.org:8020/stream">Регтайм</a> <a target="_blank" href="https://onlineradiobox.com/us/rielragtime/playlist/">● пр.</a></p>
 </div>
 
