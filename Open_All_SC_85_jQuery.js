@@ -53,7 +53,8 @@ function gener() {
          `тильда - многокр. мигание текущ. эл-та + утолщ. border
 I - зелёный overlay на месте скрытого эл-та
 z - эл-т получает z-index MAX
-a - эл-т => в консоль`;
+a - эл-т => в консоль
+v - показать искомый селектор`;
 
       function handleOutline(arg) {
          sp.innerHTML = elms.length;
@@ -217,4 +218,5 @@ a - эл-т => в консоль`;
          if (f.code == "KeyV") chto_Iszhem() 
       })
 }
+
 
