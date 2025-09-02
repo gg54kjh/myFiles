@@ -191,6 +191,15 @@ a - эл-т => в консоль`;
             scroll(x, 5)
          }
       }
+      function chto_Iszhem() {
+         if (!sp.innerHTML.includes('<br>')) {
+             sp.setAttribute('bckp',  sp.innerHTML);
+             sp.innerHTML += '<br>' +p
+         } else {
+             sp.innerHTML=sp.getAttribute('bckp');
+             sp.removeAttribute('bckp');
+         }
+      }
       d.body.addEventListener('keydown', function mm(f) {
          if (f.keyCode == 27) {
             handleOutline(0);
@@ -204,6 +213,8 @@ a - эл-т => в консоль`;
          if (f.keyCode == 192) scroll(elms[a], 10, 'border');
          if (f.keyCode == 73) overlay(elms[a]);
          if (f.keyCode == 90) zIndex();
-         if (f.keyCode == 65) setTimeout(console.log.bind(console, elms[a]))
+         if (f.keyCode == 65) setTimeout(console.log.bind(console, elms[a]));
+         if (f.code == "KeyV") chto_Iszhem() 
       })
 }
+
