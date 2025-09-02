@@ -42,7 +42,7 @@ function gener() {
          elms = [...d.querySelectorAll(p)],
          a = -1;
       jQuery('body').append(
-         '<span class="oo5"></span><style class="oo5">span.oo5{position:fixed;left:2px;top:2px;background:azure;padding:4px;z-index:2147483647;font-weight:700;font-size:1.7em}.fatbrd{border:3px solid crimson!important;outline:7px red solid!important;outline-offset:3px!important}</style>');
+         '<span class="oo5"></span><style class="oo5">span.oo5{position:fixed;left:2px;top:2px;color:#000;background:azure;padding:4px;z-index:2147483647;font-weight:700;font-size:1.7em}.fatbrd{border:3px solid crimson!important;outline:7px red solid!important;outline-offset:3px!important}</style>');
       var sp = document.querySelector('span.oo5');
       sp.ondblclick = function() {
          var s = this.style;
@@ -218,5 +218,6 @@ v - показать искомый селектор`;
          if (f.code == "KeyV") chto_Iszhem() 
       })
 }
+
 
 
