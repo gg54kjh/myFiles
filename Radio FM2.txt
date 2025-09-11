@@ -18,9 +18,9 @@ href="https://onlineradiobox.com/uk/1940sradiocom/playlist/">● пр.</a></p>
 
 <p><a target="_blank" href="https://nl4.mystreaming.net/uber/boomerang1930s/icecast.audio">Boomerang 30's</a> <a href="https://onlineradiobox.com/ae/boomerang30s/playlist/">●</a></p>
 
-<p><a target="_blank" href="https://s6.voscast.com/cdn/?k=68c30578b781d&m=;stream1757612288531/1> Swingstreetradio</a></p>
+<p><a target="_blank" href="https://swingstreetradio.org/wp-content/themes/swing/images/audio.html"> Swingstreetradio</a></p>
 
-<p><a target="_blank" href="https://s6.voscast.com/cdn/?k=68c30578b781>Swingstreetradio-1</a></p>
+<p><a target="_blank" href="http://s6.voscast.com:11312/;stream1757615456854/1">Swingstreetradio-1</a></p>
 
 
 </div>
@@ -45,4 +45,5 @@ href="https://onlineradiobox.com/uk/1940sradiocom/playlist/">● пр.</a></p>
 <p><a target="_blank" href="https://rodpesni.amgradio.ru/rp">Родные Песни</a> <a target="_blank" href="https://radiopotok.ru/RodnyePesni">● пр.</a></p>
 
 </div>
+
 
