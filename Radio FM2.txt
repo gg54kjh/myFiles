@@ -20,7 +20,7 @@ href="https://onlineradiobox.com/uk/1940sradiocom/playlist/">● пр.</a></p>
 
 <p><a target="_blank" href="https://swingstreetradio.org/wp-content/themes/swing/images/audio.html"> Swingstreetradio</a></p>
 
-<p><a target="_blank" href="http://s6.voscast.com:11312/;stream1757615456854/1">Swingstreetradio-1</a></p>
+<p><a target="_blank" href="http://s6.voscast.com:11312/;&type=mp3">Swingstreetradio-1</a></p>
 
 
 </div>
@@ -45,5 +45,6 @@ href="https://onlineradiobox.com/uk/1940sradiocom/playlist/">● пр.</a></p>
 <p><a target="_blank" href="https://rodpesni.amgradio.ru/rp">Родные Песни</a> <a target="_blank" href="https://radiopotok.ru/RodnyePesni">● пр.</a></p>
 
 </div>
+
 
 
