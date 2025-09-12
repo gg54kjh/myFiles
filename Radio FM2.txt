@@ -1,4 +1,4 @@
-<style>#div_rdo{position:fixed; display:inline; top:100px; left:300px; background:#F8F8FF; text-align:left;
+<style>#div_rdo{position:fixed; display:inline; top:35px; left:300px; background:#F8F8FF; text-align:left;
  padding:1%; border:1px solid #1f01f0; z-index:99999}#div_rdo a{color:#55A1E0 !important;}#div_rdo a:focus-visible{outline:none}#l_t, #r_t{display: inline-block}#r_t{float: right; margin-left: 40px}</style>
 
 <div id="l_t">
@@ -45,3 +45,4 @@ href="https://onlineradiobox.com/uk/1940sradiocom/playlist/">● пр.</a></p>
 <p><a target="_blank" href="https://rodpesni.amgradio.ru/rp">Родные Песни</a> <a target="_blank" href="https://radiopotok.ru/RodnyePesni">● пр.</a></p>
 
 </div>
+
