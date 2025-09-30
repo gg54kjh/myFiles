@@ -1,8 +1,7 @@
-<style>#div_rdo{position:fixed; display:inline; top:22px; left:341px; background:#F8F8FF; text-align:left;
- padding:1%; border:1px solid #1f01f0; z-index:99999; #div_rdo div{display:block}#div_rdo a{color:#55A1E0 !important;}#div_rdo a:focus-visible{outline:none}</style>
+<style>#div_rdo{position:fixed; top:22px; left:305px; display:flex; z-index:99999; padding:1%; background-color:#F8F8FF; border:1px solid #1f01f0; text-align:left}#div_rdo a{color:#55A1E0 !important}#div_rdo a:focus-visible{outline: none}#div_rdo div>h2{margin: 0 auto auto 13%; width:auto; height:auto}</style>
 
-<div id="left" style="float:left">
-<h2 style="margin: 0 auto auto 13%">JAZZ</h2>
+<div id="left">
+<h2>JAZZ</h2>
 <p><a target="_blank" href="http://79.120.39.202:8000/dixieland">Dixieland Radio</a> <a href="http://radcap.ru/playback-history/2/dixieland-ph.php">●</a></p>
 
 <p><a target="_blank" href="http://108.86.185.142:8010/radio.mp3">Dixieland Oasis</a> <a href="https://onlineradiobox.com/us/dixiekandoasis/playlist/">●</a></p>
@@ -28,8 +27,8 @@
 <p><a target="_blank" href="http://streams.radioriel.org:8020/stream">Регтайм</a> <a target="_blank" href="https://onlineradiobox.com/us/rielragtime/playlist/">● пр.</a></p>
 </div>
 
-<div id="right" style="float:right; margin-left:40px">
-<h2 style="margin: 0 auto auto 13%">MUSETTE</h2>    
+<div id="right" style="margin-left:40px">
+<h2>MUSETTE</h2>    
   <p><a target="_blank" href="https://alpes1-musette.ice.infomaniak.ch/alpes1-musette.aac">Alpes 1 - Musette</a></p>
   
   <p><a target="_blank" href="https://streams.rcbradio.net/RCBMUSETTE">RCB Musette</a></p>
