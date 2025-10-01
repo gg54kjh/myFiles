@@ -1,4 +1,4 @@
-<style>#div_rdo{position:fixed; top:22px; left:305px; display:flex; z-index:99999; padding:1%; background-color:#F8F8FF; border:1px solid #1f01f0; text-align:left}#div_rdo a{color:#55A1E0 !important}#div_rdo a:focus-visible{outline: none}#div_rdo div>h2{margin: 0 auto auto 13%; width:auto; height:auto}</style>
+<style>#div_rdo{position:fixed; top:22px; left:305px; display:flex; z-index:99999; padding:1%; background-color:#F8F8FF; border:1px solid #1f01f0; text-align:left}#div_rdo a{color:#55A1E0 !important; line-height:normal}#div_rdo a:focus-visible{outline: none}#div_rdo div>h2{color:#000; float:none; margin: 0 auto auto 13%; width:auto; height:auto}</style>
 
 <div id="left">
 <h2>JAZZ</h2>
