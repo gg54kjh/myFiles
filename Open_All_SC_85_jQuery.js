@@ -81,6 +81,7 @@ v - показать искомый селектор`;
       handleOutline(1);
 
       function sc(arg) {
+         if (sc.flag) return;
          if (arg == 'down') {
             if ((a + 1) == elms.length) a = -1;
             a++; 
@@ -214,10 +215,15 @@ v - показать искомый селектор`;
          if (f.keyCode == 192) scroll(elms[a], 10, 'border');
          if (f.keyCode == 73) overlay(elms[a]);
          if (f.keyCode == 90) zIndex();
-         if (f.keyCode == 65) setTimeout(console.log.bind(console, elms[a]));
+         if (f.code == "KeyA") { 
+           sc.flag=1; setTimeout(()=>sc.flag=null, 2000);
+           setTimeout(console.log.bind(console, elms[a]));
+           setTimeout(()=>top.postMessage('postMsg$$$Global keydown_pageutils###0x4B###ctrl###shift', '*'), 800)
+         }
          if (f.code == "KeyV") chto_Iszhem() 
       })
 }
+
 
 
 
