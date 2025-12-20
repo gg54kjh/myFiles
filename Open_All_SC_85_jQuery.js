@@ -53,7 +53,7 @@ function gener() {
          `тильда - многокр. мигание текущ. эл-та + утолщ. border
 I - зелёный overlay на месте скрытого эл-та
 z - эл-т получает z-index MAX
-a - эл-т => в консоль
+c - эл-т => в консоль
 v - показать искомый селектор`;
 
       function handleOutline(arg) {
@@ -215,14 +215,15 @@ v - показать искомый селектор`;
          if (f.keyCode == 192) scroll(elms[a], 10, 'border');
          if (f.keyCode == 73) overlay(elms[a]);
          if (f.keyCode == 90) zIndex();
-         if (f.code == "KeyA") { 
+         if (f.code == "KeyC") { 
            sc.flag=1; setTimeout(()=>sc.flag=null, 2000);
-           setTimeout(console.log.bind(console, elms[a]));
+           setTimeout(console.log.bind(console, '%c op.All-github', 'color:limegreen; font-family:arial;font-weight:800', elms[a]));
            setTimeout(()=>top.postMessage('postMsg$$$Global keydown_pageutils###0x4B###ctrl###shift', '*'), 800)
          }
          if (f.code == "KeyV") chto_Iszhem() 
       })
 }
+
 
 
 
