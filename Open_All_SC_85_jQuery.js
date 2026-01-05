@@ -1,5 +1,5 @@
 document.body.insertAdjacentHTML('beforeend',
- `<div id="oo5"class="oo5">
+ `<div id="oo5"class="oo5" tabindex="-1">
    <style>
     #oo5{position:fixed;left:0;bottom:0;width:100%;height:100%;background:#99989B9C;z-index:99999}
     #oo5 input{width:500px; background:pink}
@@ -14,6 +14,10 @@ document.body.insertAdjacentHTML('beforeend',
 
 var d = document,
    inp = d.querySelector('#oo5 input');
+d.querySelector('#oo5').onkeydown=e=>{
+  if(e.keyCode==27) 
+    while (d.querySelector('.oo5')) {d.querySelector('.oo5')?.remove()}
+}
 if (typeof jQuery == 'undefined') {
    var sr = d.head.appendChild(d.createElement('script'));
    sr.src = 'https://code.jquery.com/jquery-3.2.0.min.js';
@@ -223,6 +227,7 @@ v - показать искомый селектор`;
          if (f.code == "KeyV") chto_Iszhem() 
       })
 }
+
 
 
 
