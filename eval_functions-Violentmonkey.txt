@@ -1,5 +1,5 @@
 @@@@@Coord
-(()=>{var d=document,x,div=d.body.appendChild(d.createElement("div"));div.id="Coor";yy=(s)=>{if(s.shiftKey){if(!d.querySelector('#coor_')){x=d.body.appendChild(div.cloneNode(true));x.id='coor_';x.className="mydiv_class"}else x.remove()}};function zz(e){div.innerHTML=`<style>#Coor,#coor_{position:fixed;background:#fff;z-index:2147483647;padding:4px 8px;border:1px solid black;top:${e.clientY}px;left:${e.clientX}px</style>${e.clientX},${e.clientY}<hr>${e.pageX},${e.pageY}`;if(e.altKey){div.remove();x?.remove();d.removeEventListener("mousemove",zz,!0);d.removeEventListener("keydown",yy)}}d.addEventListener("mousemove",zz,!0);d.addEventListener("keydown",yy)
+(()=>{var d=document,x,div=d.body.appendChild(d.createElement("div"));div.id="Coor";yy=(s)=>{if(s.shiftKey){if(!d.querySelector('#coor_')){x=d.body.appendChild(div.cloneNode(true));x.id='coor_';x.className="mydiv_class"}else x.remove()}};function zz(e){div.innerHTML=`<style>#Coor,#coor_{position:fixed;background:#fff;z-index:2147483647;padding:4px 8px;border:1px solid black;top:${e.clientY}px;left:${e.clientX}px</style>${e.clientX},${e.clientY}<hr>${e.pageX},${e.pageY}`;if(e.ctrlKey){div.remove();x?.remove();d.removeEventListener("mousemove",zz,!0);d.removeEventListener("keydown",yy)}}d.addEventListener("mousemove",zz,!0);d.addEventListener("keydown",yy)
 })()
 @@@@@Vremya
 (()=> {
@@ -186,4 +186,5 @@ setTimeout(()=>{
 }, 50)
 })()
 @@@@@
+
 
