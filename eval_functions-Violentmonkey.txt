@@ -63,23 +63,23 @@ var dc = document;
     var dv = document.createElement('div'); dv.id = 'bookm'; dv.className = 'mydi_class mydrg';
     document.body.append(dv);
     dv.innerHTML = `
-<a>• Universal decoder</a><br>
-<a>• HTML entity</a><br>
-<a>• keyboard-events</a><br>
-<a>• rgb-to-hex converter</a><br>
-<a>• Hebrew Keyboard</a><br>
-<a>• Калькулятор</a><br>
-<a>• Base64 encoder/decoder</a><br>
-<a>• Типы GM_xmlhttpRequest</a><br>
+<a>&bull; Universal decoder</a><br>
+<a>&bull; HTML entity</a><br>
+<a>&bull; keyboard-events</a><br>
+<a>&bull; rgb-to-hex converter</a><br>
+<a>&bull; Hebrew Keyboard</a><br>
+<a>&bull; Калькулятор</a><br>
+<a>&bull; Base64 encoder/decoder</a><br>
+<a>&bull; Типы GM_xmlhttpRequest</a><br>
 <div id="betw">&nbsp;</div>
 <div id="right" style="display:none">
-<a>• Bookmarks</a>
+<a>&bull; Bookmarks</a>
 <br>
-<a>• Plugins</a>
+<a>&bull; Plugins</a>
 <br>
-<a>• Collapse</a>
+<a>&bull; Collapse</a>
 <br>
-<a onclick="javascript:childs=document.querySelectorAll('li[class*=&quot;b-leaf-actions-expandchilds&quot;],[class*=&quot;2mdspost-comment-actions__item--expand&quot;]');for(i=0;i<40;i++)childs[i]?.children[0].click();void 0">• Collapse new design</a>
+<a onclick="javascript:childs=document.querySelectorAll('li[class*=&quot;b-leaf-actions-expandchilds&quot;],[class*=&quot;2mdspost-comment-actions__item--expand&quot;]');for(i=0;i<40;i++)childs[i]?.children[0].click();void 0">&bull; Collapse new design</a>
 <br>
  </div>
 <div id="zakr">закрыть</div>
@@ -160,3 +160,4 @@ setTimeout(()=>{
   }
 })()
 @@@@@
+
