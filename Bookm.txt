@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head><style>
+     #wrap {display: flex; justify-content: space-between}
+     #ul2  {max-width: 60%; margin-right: 60px}      
+     li {padding-bottom: 1em; padding-bottom: 1em; font-family: arial}
+     #ul1 li b {cursor: pointer; display: inline-block}
+     #ul1 li:hover {color: #0000CD}
+     .pre {white-space: pre}
+     .blue {color: blue}
+</style></head>
+<body>
+<h2>My Bookmarks</h2>
+<div id="wrap">
+<ul id="ul1">
+<li><a  href="https://jsonformatter.org/jsbeautifier"><<< Best JS / HTML Beautifier >>></a></li>
+<li><a  href="https://fls.guru/flexbox.html"> Шпаргалка по Flexbox</a></li>
+<li><a  href="https://onlinetool.app/tool/hls-player"> Web player HLS, m3u8 </a></li>
+<li>
+   <b onclick="show('.pes', this)">[Песочницы]</b></li>
+<li class="pes" hidden><a  href="http://rendera.herokuapp.com/">Rendera - Online HTML5 Editor</a></li>
+<li class="pes" hidden><a  href="https://jsbin.com/?html,output">JS Bin - Песочница</a></li>
+<li class="pes" hidden><a  href="http://js.do/code/1633">Песочн.</a></li>
+<li class="pes" hidden><a  href="http://www.infobyip.com/htmlandjavascripteditor.php">HTML AND JAVASCRIPT EDITOR</a></li>
+<li>
+   <b onclick="show('.polezn', this)">[Полезн. серв. всякое]</b></li>
+<li class="polezn" hidden><a href="http://web.artlebedev.ru/tools/decoder/">Декодер Арт.Лебедева</a></li>
+<li class="polezn" hidden><a  href="http://web.artlebedev.ru/tools/transcriptor/turkish/">Транскриптор</a></li>
+<li class="polezn" hidden><a href="http://2cyr.com/decode/?lang=ru">Универсальный декодер кириллицы</a></li>
+<li class="polezn" hidden><a href="http://www.online-decoder.com/ru">Онлайн декодер</a></li>
+<li class="polezn" hidden><a href="https://online-audio-converter.com/ru/">Можно узнать битрейт удалённого файла</a></li>
+<li class="polezn" hidden><a  href="http://mark0.net/onlinetrid.aspx">Определить тип файла</a></li>
+<li class="polezn" hidden><a  href="http://www.listenspotify.com/">Поиск на  Spotify</a></li>
+<li class="polezn" hidden><a  href="https://open.spotify.com/browse">Веб-плеер на Spotify</a></li>
+<li class="polezn" hidden><a  href="https://www.remove.bg/">Удалить background он-лайн</a></li>
+<li class="polezn" hidden><a  href="http://www.gate2home.com/?language=he&sec=2">Virtual Keyboard - Hebrew gate2home</a></li>
+<li class="polezn" hidden><a href="https://www.get-metadata.com/"><<< Remote file meta info >>!!</a></li>
+<li class="polezn" hidden><a href="http://www.digitalcoding.com/tools/read-remote-mp3-avi-file-id3-information.html">Remote MP3/AVI information</a></li>
+<li>
+   <b onclick="show('.razn', this)">[Beautifiers & CSS Generators]</b></li>
+<li class="razn" hidden><a  href="file:///C:/My%20Downloads/F+/jQuery%20Cheat%20Sheet.html">Шпаргалка  jQuery</a></li>
+<li class="razn" hidden><a  href="http://htmlcompressor.com/compressor/">HTMLCompress - псле обраб. нажть Single line JavaScript</a></li>
+<li class="razn" hidden><a href="https://cssgenerator.org/">Генератор CSS эффектов</a></li>
+<li class="razn" hidden><a href="https://css3generator.com/">Ещё генератор CSS эффектов</a></li>
+<li class="razn" hidden><a  href="https://webcode.tools/css-generator">Генератор CSS</a></li>
+<li class="razn" hidden><a  href="https://cssflex-generator.netlify.app/">Конструктор флексбоксов</a></li>
+<li>
+     <b onclick="show('.arch', this)">[Архиваторы ]</b></li>
+<li class="arch" hidden><a  href="https://wapinet.ru/archiver/extract"><< Распак. архив - wapinet  до 45 MB >></a></li>
+<li class="arch" hidden><a  href="http://zip.2yxa.mobi/">Онлайн-разархиватор 2yxa.ru не удалять оригинал</a></li>
+<li class="arch" hidden><a  href="https://extract.me/ru/">extract.me /r - открывать в ИЕ или Хроме</a></li>
+<li>
+   <b onclick="show('.bkm', this)">[Букмарклеты]</b></li>
+<li class="bkm" hidden><a onclick="window.open('file:///c:/My%20Downloads/F+/Universal%20decoder.html' , '', 'left=78,top=90,width=588,height=538,resizable,scrollbars')">Universal decoder</a></li>
+<li class="bkm" hidden><a  onclick="window.open('file:///c:/My%20Downloads/F+/HTML_entity_Good.html/' , '', 'left=78,top=90,width=588,height=562,resizable,scrollbars')">HTML entity</a></li>
+<li class="bkm" hidden><a  onclick="window.open('file:///c:/My%20Downloads/F+/rgb-to-hex_color_converter.html'  , '', 
+'left=591,top=245,width=425,height=230,resizable,scrollbars')">rgb-to-hex converter
+</a></li>
+<li class="bkm" hidden><a 
+onclick="window.open('file:///c:/My%20Downloads/F+/keyboard-events.htm'  , '', 'left=250,top=88,width=655,height=368, resizable')">keyboard-events
+</a></li>
+<li class="bkm" hidden><a  onclick="window.open('file:///c:/My%20Downloads/F+/Hebrew%20Keyboard_85.htm' ,
+     '', 'left=10,top=92,width=700,height=290,scrollbars,resizable')">Hebrew Keyboard
+</a></li>
+<li class="bkm" hidden><a  onclick="window.open('file:///c:/My%20Downloads/F+/Calculator.html'  , '', 'left=490,top=112,width=385,height=340,scrollbars,resizable')">Калькулятор
+</a></li>
+<li class="bkm" hidden><a  onclick="window.open('file:///c:/My%20Downloads/F+/Base64_encoder_decoder_mothereff.html', '', 'left=78,top=70,width=588,height=538')">
+  Base64 encoder/decoder</a></li>
+<li class="bkm" hidden><a href="https://wiki.greasespot.net/GM.xmlHttpRequest#Bare_Minimum" target="_blank">
+   Типы GM_xmlhttpRequest</a></li>
+<li>
+   <b onclick="show('.dost', this)">[Доступность сайта]</b></li>
+<li class="dost" hidden><a  href="https://www.websiteplanet.com/ru/webtools/down-or-not/">websiteplanet</a></li>
+<li class="dost" hidden><a  href="https://www.isitdownrightnow.com/">isitdownrightnow</a></li>
+<li class="dost" hidden><a  href="https://www.dotcom-tools.com/website-speed-test.aspx">Dotcom-Tools</a></li>
+<li class="dost" hidden><a  href="http://www.issitedownrightnow.com/status/ru/">Issitedownrightnow.com/status/ru/</a></li>
+<li class="dost" hidden><a  href="http://gtmetrix.com/">GTmetrix | Скорость загрузки сайта</a></li>
+</ul>
+
+<ul id="ul2">
+<li><b>mouseDown:</b> A reference to the first mousedown event in the gesture.</li>
+<li><b>mouseDown.target:</b> A reference to the DOM element under the mouse when the gesture started.</li>
+<li><b>data.element.linkHref</b> A reference to link</li>
+<li><b>data.element.mediaSource</b> is the src attribute of any media element (img,video,audio,etc.) under the mouse</li>
+<li><b>data.element.mediaType</b> is the mime type of any media element under the mouse. Only populated if specified, such as in HTML5 audio and video elements. It may be used to infer a file type from extensionless source URLs.</li>
+<li>read text from Clipboard: <code>navigator.clipboard.readText().then(clipText => open(clipText));</code></li>
+<li>write text to Clipboard: <code>navigator.clipboard.writeText(text)</code></li>
+<hr>
+<li><b>Глобальные функции надо использовать с</b> executeInBackground:<br>
+  <span class="pre">
+<span class="blue">executeInBackground(() => {</span>
+     getCurrentWindowTabs().
+         then(arg => make smth. with arg)   // если функция возвращает promise
+<span class="blue">})</span>
+
+  - или -
+
+<span class="blue">executeInBackground(() => {</span>
+    getActiveTab(arg => make smth. with arg)   // если без promise
+<span class="blue">}) </span></span></li>
+</ul>
+</div>
+<script>
+   function show(x, y) {
+       var pes = document.querySelectorAll(x); 
+       for(var a of pes)
+          a.hidden == true ? (a.hidden = false, y.style.color = 'lime') : (a.hidden = true, y.style.color = '')
+   }  
+</script>
+</body>
+</html>    
