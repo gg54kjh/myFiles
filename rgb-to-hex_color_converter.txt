@@ -1,0 +1,44 @@
+<html style="width: 400px;"><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"></head><body>
+ <!---  http://www.javascripter.net/faq/rgbtohex.htm  --->
+<input id="shablon" type="text" style="position:absolute; left:0; bottom:0; width:40px; height:25px; border:none">
+<p><br></p><form name="rgb"> 
+
+<script>
+ function hexToRgb() {
+ hex = document.querySelector('#in1').value.replace('#', '').replace('0x', '');
+    var bigint = parseInt(hex, 16);
+    var r = (bigint >> 16) & 255;
+    var g = (bigint >> 8) & 255;
+    var b = bigint & 255;
+document.querySelector('[name="hex"]').value = r + ",  " + g + ",  " + b;
+backCol = "rgb(" +r + ",  " + g + ",  " + b+ ")";  
+shablon.style.backgroundColor = document.querySelector('#colorSample').style.backgroundColor=backCol  
+}
+</script>
+
+<input id="in0" value="hex to rgb" style="position: relative; margin-left: 184px; margin-bottom: 3px;" type="button" onclick="hexToRgb()">
+<br>
+<span style="border: 1px solid gray;" id="colorSample"><big><big><code style="cursor:default;">&nbsp;&nbsp;&nbsp;</code></big></big></span>
+<input style="position:relative; margin-left:4px; width:170px; text-align: center" id="in1"  type="text">
+<input onclick="val=document.getElementById('in1').value;R=val.split(',')[0].replace(/\D/g, ''); 
+G=val.split(',')[1];
+B=val.split(',')[2].replace(/\D/g, '');
+function rgbToHex(R,G,B) {return toHex(R)+toHex(G)+toHex(B)}
+function toHex(n) {
+ n = parseInt(n,10);
+ if (isNaN(n)) return '00';
+ n = Math.max(0,Math.min(n,255));
+ return '0123456789ABCDEF'.charAt((n-n%16)/16)
+      + '0123456789ABCDEF'.charAt(n%16)};
+document.getElementsByName('hex')[0].value='#  ' +rgbToHex(R,G,B);  shablon.style.background = 
+document.getElementById('colorSample').style.background='#' +rgbToHex(R,G,B)" style="position:relative; margin-left:1px" value="rgb to hex" id="in2" type="button">
+<input style="width: 100px;" size="8" name="hex" type="text"><br>
+<center><input onclick="document.getElementById('in1').value=''; document.getElementsByName('hex')[0].value=''; shablon.style.background = 
+document.getElementById('colorSample').style.background=''" style="position:relative; margin-top:5px" value=" Clear " id="in3" type="button"></center>
+
+</form>
+
+<p></p>
+
+</body></html>
