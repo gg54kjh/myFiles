@@ -1,0 +1,236 @@
+<html>
+
+<head>
+ <meta charset="UTF-8">
+  <style>
+     #ta{width: 562px; height: 85px; padding: 3px 6px; font-size: 14px; overflow: auto } 
+     #outp {
+         border: 2px solid;
+         font-size: 14px;
+         margin: 25px 0 15px 0; 
+         width: 550px;
+         height:130px;
+         padding:3px 6px; 
+         overflow: auto;   resize:both;
+         background: #FFF;
+     } 
+     input {  
+           width: 110px;
+           padding: 2px  4px;
+           font-size:14px; 
+     }
+     .l { float: left; margin-left: 27px }
+     .r {float:right; margin-right: 15px} 
+    #btn {width: 554px; } 
+    span {color: blue}
+    body a {color: limegreen; font-size: 24px !important;}
+  </style>
+</head>
+
+ <body style="background:#f7f8fa">
+<textarea id="ta" ondblclick=this.select()></textarea>
+<div id="outp" contenteditable=true ondblclick="document.execCommand( 'selectAll', false,null )"></div>
+<div id="btn">
+    <div><input type="button" class="l" value="dec.URIComp."> <input type="button" class="r" value="enc.URIComp."></div> <br><br>
+    <div><input type="button" class="l" value="decodeURI"><input type="button" class="r" value="encodeURI"></div> <br><br>
+    <div><input type="button" class="l" value="unesc"><input type="button" class="r" value="esc"></div><br><br>
+    <div><input type="button" class="l" value="dec.Base64">
+<input value="Clear All" style="margin-left: 95px;"  
+    onclick="document.querySelector('#ta').value=''; document.querySelector('#outp').innerHTML=''"  type="button">
+    <input type="button" class="r" value="enc.Base64"></div><p><a href="http://www.codenet.ru/services/urlencode-urldecode/"
+         target="_blank">http://www.codenet.ru/services/urlencode-urldecode</a></p>
+</div>
+
+<script  type="text/javascript" >
+   function b() {
+       var br;  if (outp.innerHTML=='undefined' || outp.innerHTML=='')   br = ''
+        else br = '<br>' ;  return br   //alert(outp.innerHTML+ '\n\n'+br);
+   }
+   function  doCode(){
+       var ta = document.getElementById('ta'), outp =  document.getElementById('outp') ;
+
+        document.querySelectorAll('input')[0].onclick=function() { 
+             var ta_value = ta.value.replace(/</g, '&lt;').replace(/>/g, '&gt;'); //  заменяет < и >  на сущности
+             function tryDecodeURI(str) { 
+                 try {
+                     return decodeURIComponent(str);
+                 } catch (e) {}
+                 return str.replace(/(?:%[\dA-F]{2})+/g, function(s) {
+                     var rest = "";
+                     do {
+                         try {
+                              return decodeURIComponent(s) + rest;
+                         } catch (e) {}
+                         // Strip last %NN and try decode again
+                          rest = s.slice(-3) + rest;
+                          s = s.slice(0, -3);
+                      }
+                       while (s.length >= 3);
+                       return s + rest;
+                 });
+              }
+              outp.innerHTML += b()+ '<span>decodeURIComponent= </span>' +tryDecodeURI (ta_value)
+        };
+       
+       document.querySelectorAll('.r')[0].onclick=function() { outp.innerHTML += b()+ '<span>encodeURIComponent= </span>'  +encodeURIComponent(ta.value) };
+       
+       document.querySelectorAll('.l')[1].onclick=function() { 
+           var ta_value = ta.value.replace(/</g, '&lt;').replace(/>/g, '&gt;');   //  заменяет < и >  на сущности
+           try {outp.innerHTML +=  '<br><span>decodeURI= </span>' +decodeURI ( ta_value ) }
+           catch (err) {outp.innerHTML +=  '<br><span style="color:red">' +err+'</span>'}
+       }; 
+  
+        document.querySelectorAll('.r')[1].onclick=function() {outp.innerHTML +=   b()+ '<span>encodeURI= </span>' +encodeURI(ta.value) };
+
+        document.querySelectorAll('.l')[2].onclick=function() { 
+             var ta_value = ta.value.replace(/</g, '&lt;').replace(/>/g, '&gt;'); //  заменяет < и >  на сущности
+             outp.innerHTML +=  b()+   '<span>unescape= </span>' +unescape(ta_value)
+         };
+
+        document.querySelectorAll('.r')[2].onclick=function() { outp.innerHTML +=   b()+  '<span>escape= </span>' +escape(ta.value)};
+    }
+    window.onload =  doCode 
+</script>
+
+<script  type="text/javascript" >
+         <!--      Base64  Encode / Decode            -->
+        var ta = document.getElementById('ta'), outp =  document.getElementById('outp') ;
+var Base64 = {
+  // private property
+  _keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
+  // public method for encoding
+  encode: function(input) {
+    var output = "";
+    var chr1, chr2, chr3, enc1,
+      enc2, enc3, enc4;
+    var i = 0;
+    input = Base64._utf8_encode(
+      input);
+    while (i < input.length) {
+      chr1 = input.charCodeAt(i++);
+      chr2 = input.charCodeAt(i++);
+      chr3 = input.charCodeAt(i++);
+      enc1 = chr1 >> 2;
+      enc2 = ((chr1 & 3) << 4) | (
+        chr2 >> 4);
+      enc3 = ((chr2 & 15) << 2) | (
+        chr3 >> 6);
+      enc4 = chr3 & 63;
+      if (isNaN(chr2)) {
+        enc3 = enc4 = 64;
+      } else if (isNaN(chr3)) {
+        enc4 = 64;
+      }
+      output = output + this._keyStr
+        .charAt(enc1) + this._keyStr
+        .charAt(enc2) + this._keyStr
+        .charAt(enc3) + this._keyStr
+        .charAt(enc4);
+    }
+    return output;
+  },
+  // public method for decoding
+  decode: function(input) {
+    var output = "";
+    var chr1, chr2, chr3;
+    var enc1, enc2, enc3, enc4;
+    var i = 0;
+    input = input.replace(
+      /[^A-Za-z0-9\+\/\=]/g, "");
+    while (i < input.length) {
+      enc1 = this._keyStr.indexOf(
+        input.charAt(i++));
+      enc2 = this._keyStr.indexOf(
+        input.charAt(i++));
+      enc3 = this._keyStr.indexOf(
+        input.charAt(i++));
+      enc4 = this._keyStr.indexOf(
+        input.charAt(i++));
+      chr1 = (enc1 << 2) | (enc2 >>
+        4);
+      chr2 = ((enc2 & 15) << 4) | (
+        enc3 >> 2);
+      chr3 = ((enc3 & 3) << 6) |
+        enc4;
+      output = output + String.fromCharCode(
+        chr1);
+      if (enc3 != 64) {
+        output = output + String.fromCharCode(
+          chr2);
+      }
+      if (enc4 != 64) {
+        output = output + String.fromCharCode(
+          chr3);
+      }
+    }
+    output = Base64._utf8_decode(
+      output);
+    return output;
+  },
+  // private method for UTF-8 encoding
+  _utf8_encode: function(string) {
+    string = string.replace(/\r\n/g,
+      "\n");
+    var utftext = "";
+    for (var n = 0; n < string.length; n++) {
+      var c = string.charCodeAt(n);
+      if (c < 128) {
+        utftext += String.fromCharCode(
+          c);
+      } else if ((c > 127) && (c <
+          2048)) {
+        utftext += String.fromCharCode(
+          (c >> 6) | 192);
+        utftext += String.fromCharCode(
+          (c & 63) | 128);
+      } else {
+        utftext += String.fromCharCode(
+          (c >> 12) | 224);
+        utftext += String.fromCharCode(
+          ((c >> 6) & 63) | 128);
+        utftext += String.fromCharCode(
+          (c & 63) | 128);
+      }
+    }
+    return utftext;
+  },
+  // private method for UTF-8 decoding
+  _utf8_decode: function(utftext) {
+    var string = "";
+    var i = 0;
+    var c = c1 = c2 = 0;
+    while (i < utftext.length) {
+      c = utftext.charCodeAt(i);
+      if (c < 128) {
+        string += String.fromCharCode(
+          c);
+        i++;
+      } else if ((c > 191) && (c <
+          224)) {
+        c2 = utftext.charCodeAt(i +
+          1);
+        string += String.fromCharCode(
+          ((c & 31) << 6) | (c2 &
+            63));
+        i += 2;
+      } else {
+        c2 = utftext.charCodeAt(i +
+          1);
+        c3 = utftext.charCodeAt(i +
+          2);
+        string += String.fromCharCode(
+          ((c & 15) << 12) | ((c2 &
+            63) << 6) | (c3 & 63)
+        );
+        i += 3;
+      }
+    }
+    return string;
+  } }
+  document.querySelectorAll('.l')[3].onclick=function() { outp.innerHTML +=   b()+ '<span>decodeBase64= </span>' +Base64.decode(ta.value) };
+  document.querySelectorAll('.r')[3].onclick=function() { outp.innerHTML +=  b()+ '<span>encodeBase64= </span>' +Base64.encode(ta.value) };
+
+</script>
+
+</body>                                                                                                                  
+</html>
