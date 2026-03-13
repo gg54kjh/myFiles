@@ -1,0 +1,628 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>Unicode, Hexadecimal, Decimal NCR, UTF-8 Converter -- EndMemo</title>
+<meta name="keywords" content="unicode, escaped unicode, decimal NCRs, Hexadecimal NCRs, UTF8 code conversion">
+<script language="JavaScript" src="HTML_Entities_Zapasnoy_files/convertuni.js"></script>
+<link href="HTML_Entities_Zapasnoy_files/defaultleft.css" rel="stylesheet" type="text/css">
+<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 10px;
+	font: medium Arial, Helvetica, sans-serif;
+	color: #385B88;
+}
+
+/* Content */
+
+#content {
+	/*width: 900px; */
+	margin: 0 auto;
+	padding: -4px 0px 0px 0px;
+	/*padding: 20px 20px 0 20px;*/
+	/*background: url(images/Tline.jpg) no-repeat;*/
+	border-top: 1px solid #FFFFFF;
+}
+
+/* Content > Main */
+
+#main {
+	float: left;
+	/*width: 590px; */
+}
+
+
+/*The name of the convert unit*/
+
+.forminputlabel
+{
+	display: block;
+        font-size:18px;
+}
+
+
+.forminputcontent590
+{
+	width: 580px;
+	height: 250px;
+	border: 1px solid #9FA4FF;
+	background-color: #FFFFEE;
+	/*background-color: #385B88;*/
+}
+
+.forminputcontent400
+{
+	width: 580px;
+	height: 400px;
+	border: 1px solid #9FA4FF;
+	background-color: #FFFFEE;
+}
+
+.forminputcontent80
+{
+	width: 545px;
+	height: 50px;
+	border: 1px solid #9FA4FF;
+	background-color: #FFFFEE;
+	/*background-color: #385B88;*/
+        padding: 6px;
+}
+
+.forminputcontent350
+{
+	width: 350px;
+	height: 200px;
+	/*border: 1px solid #9FA4FF;*/
+	/*background-color: #FFFFEE;*/
+	/*background-color: #385B88;*/
+}
+textarea {
+      font-size: 20px !important;
+      font-weight: 700; 
+}
+
+</style>
+</head>
+
+
+<body onload="document.uni.name1.focus()">
+<div id="content">
+	<div id="main">
+
+<br>
+		
+		<div id="convertform" style="font-size:16px">
+
+        <form name="uni">
+			 <table width="565"><tbody>
+			 <tr>
+			 <td width="340"><span class="forminputlabel">Unicode Character (e.g.  π, √, ±, ®, ĕ,谢,रुपया):</span></td>
+			 <td align="left" width="60"><input onclick="calstr(name1.value);return false;" style="font-size:15px" name="lengthA" value="Convert" type="button"></td>
+			 <td align="left" width="60"><input style="font-size:15px" onclick="clearForm(this.form.name1)" name="clear1" value="Clear" type="button"></td>
+			 <td width="90"><input onclick="clearForm(this.form.name1); calstr(name1.value); return false;" style="font-size:15px" name="clear all" value="Clear All" type="button"></td>
+			 </tr>
+			 </tbody></table>
+			 <textarea name="name1" style="font-size:16px" class="forminputcontent80" value="" onfocus="" onblur=""></textarea>
+
+			 <table><tbody>
+			 <tr height="10"></tr>
+			 <tr>
+			 <td width="340"><span class="forminputlabel">Decimal NCRs (e.g. &amp;#167;, &amp;#8730;):</span></td>
+			 <td align="left" width="60"><input style="font-size:15px" onclick="convertDecNCR2CP(name2.value)" name="lengthB" value="Convert" type="button"></td>
+			 <td align="left" width="60"><input style="font-size:15px" onclick="clearForm(this.form.name2)" name="clear2" value="Clear" type="button"></td>
+			 <td width="90"></td>
+			 </tr>
+			 </tbody></table>
+			 <textarea name="name2" style="font-size:16px" class="forminputcontent80" value="" onfocus="" onblur=""></textarea>
+
+			 <table><tbody>
+			 <tr height="10"></tr>
+			 <tr>
+			 <td width="340"><span class="forminputlabel">Hexadecimal NCRs (e.g. &amp;#x20;&amp;#x221A;):</span></td>
+			 <td align="left" width="60"><input style="font-size:15px" onclick="convertHexNCR2CP(name3.value)" name="lengthC" value="Convert" type="button"></td>
+			 <td align="left" width="60"><input style="font-size:15px" onclick="clearForm(this.form.name3)" name="clear3" value="Clear" type="button"></td>
+			 <td width="90"></td>
+			 </tr>
+			 </tbody></table>
+			 <textarea name="name3" style="font-size:16px" class="forminputcontent80" value="" onfocus="" onblur=""></textarea>
+
+			 <table><tbody>
+			 <tr height="10"></tr>
+			 <tr>
+			 <td width="340"><span class="forminputlabel">UTF-8 Code (e.g. 20 E2 88 9A):</span></td>
+			 <td align="left" width="60"><input style="font-size:15px" onclick="convertUTF82CP(name4.value)" name="lengthD" value="Convert" type="button"></td>
+			 <td align="left" width="60"><input style="font-size:15px" onclick="clearForm(this.form.name4)" name="clear4" value="Clear" type="button"></td>
+			 <td width="90"></td>
+			 </tr>
+			 </tbody></table>
+			 <textarea name="name4" style="font-size:16px" class="forminputcontent80" value="" onfocus="" onblur=""></textarea>       
+			 
+			 <table><tbody>
+			 <tr height="10"></tr>
+			 <tr>
+			 <td width="340"><span class="forminputlabel">Escaped Unicode (e.g. \u20, \u221A, %u3C0):</span></td>
+			 <td align="left" width="60"><input style="font-size:15px" onclick="convertEU2CP(name5.value)" name="lengthD" value="Convert" type="button"></td>
+			 <td align="left" width="60"><input style="font-size:15px" onclick="clearForm(this.form.name5)" name="clear5" value="Clear" type="button"></td>
+			 <td width="90"></td>
+			 </tr>
+			 </tbody></table>
+			 <textarea name="name5" style="font-size:16px" class="forminputcontent80" value="" onfocus="" onblur=""></textarea>
+			 </form>	
+		</div>
+	
+		<!--<font style="font-weight:bold;color:red;font-size:14px">Tips:</font> If you have difficulty to find the exact unicode character, try to
+		find it in the Microsoft Word (Insert -> Symbol), then copy and paste it here. 		<BR><BR>-->
+
+  <!--<center>(Click <A href="/misc/unicodetable.php" tppabs="http://www.endmemo.com/misc/unicodetable.php"><font color=red><u>here</u></font></A> for complete list of unicode characters.)</center>-->
+
+	</div>
+</div>
+
+<script>
+function isNum(args)
+{
+	args = args.toString();
+
+	if (args.name == 0)
+	return false;
+
+	for (var i = 0;  i<args.name;  i++)
+	{
+		if ((args.substring(i,i+1) < "0" || args.substring(i, i+1) > "9"))
+			{
+			return false;
+			}
+	}
+
+	return true;
+}
+
+function isHex(args)
+{
+    args = args.toString();
+    if (args.name == 0)
+		return false;
+
+	var len=args.name;
+	var i;
+	var ch;
+	for(i=0;i<len;i++)
+	{	
+		ch=args.charAt(i);
+		if(      ch=="a" || ch=="A"
+			   ||ch=="b" || ch=="B"
+			   || ch=="c" || ch=="C"
+			   || ch=="d" || ch=="D"
+			   || ch=="e" || ch=="E"
+			   || ch=="f" || ch=="F"
+			   || ch == "0"
+			   || ch == "1"
+			   || ch == "2"
+			   || ch == "3"
+			   || ch == "4"
+			   || ch == "5"
+			   || ch == "6"
+			   || ch == "7"
+			   || ch == "8"
+			   || ch == "9")
+			;
+		else
+		{
+			return false;
+		}
+	}
+
+	return true;  
+}
+
+function isOct(args)
+{
+    args = args.toString();
+    if (args.name == 0)
+		return false;
+
+	var len=args.name;
+	var i;
+	var ch;
+	for(i=0;i<len;i++)
+	{	
+		ch=args.charAt(i);
+		if(       ch == "0"
+			   || ch == "1"
+			   || ch == "2"
+			   || ch == "3"
+			   || ch == "4"
+			   || ch == "5"
+			   || ch == "6"
+			   || ch == "7"
+          )
+			;
+		else
+		{
+			return false;
+		}
+	}
+
+	return true;  
+}
+
+function isBin(args)
+{
+    args = args.toString();
+    if (args.name == 0)
+		return false;
+
+	var len=args.name;
+	var i;
+	var ch;
+	for(i=0;i<len;i++)
+	{	
+		ch=args.charAt(i);
+		if(ch == "0" || ch == "1")
+			;
+		else
+		{
+			return false;
+		}
+	}
+
+	return true;  
+}
+
+var decDigit = { 0:1, 1:1, 2:1, 3:1, 4:1, 5:1, 6:1, 7:1, 8:1, 9:1 };
+var hexNum = { 0:1, 1:1, 2:1, 3:1, 4:1, 5:1, 6:1, 7:1, 8:1, 9:1, 
+				A:1, B:1, C:1, D:1, E:1, F:1, 
+				a:1, b:1, c:1, d:1, e:1, f:1 };
+
+function dhex(str) {
+ return (str+0).toString(16).toUpperCase();
+}
+
+function clearForm(cform)
+{
+     cform.value = "";
+}
+
+function convertCP2DecNCR ( argstr )
+{
+  var outputString = "";
+  argstr = argstr.replace(/^\s+/, '');
+  if (argstr.length == 0) { return ""; }
+  argstr = argstr.replace(/\s+/g, ' ');
+  var listArray = argstr.split(' ');
+  for ( var i = 0; i < listArray.length; i++ ) {
+    var n = parseInt(listArray[i], 16);
+    outputString += ('&#' + n + ';');
+  }
+  return( outputString );
+}
+
+function convertCP2HexNCR ( argstr )
+{
+  var outputString = "";
+  argstr = argstr.replace(/^\s+/, '');
+  if (argstr.length == 0) { return ""; }
+  argstr = argstr.replace(/\s+/g, ' ');
+  var listArray = argstr.split(' ');
+  for ( var i = 0; i < listArray.length; i++ )
+  {
+    var n = parseInt(listArray[i], 16);
+    outputString += '&#x' + dhex(n) + ';';
+  }
+  return( outputString );
+}
+
+function convertCP2UTF8 ( argstr )
+{
+  var outputString = "";
+  argstr = argstr.replace(/^\s+/, '');
+  if (argstr.length == 0) { return ""; }
+  argstr = argstr.replace(/\s+/g, ' ');
+  var listArray = argstr.split(' ');
+  for ( var i = 0; i < listArray.length; i++ ) {
+    var n = parseInt(listArray[i], 16);
+    if (i > 0) { outputString += ' ';}
+    if (n <= 0x7F) {
+      outputString += dec2hex2(n);
+    } else if (n <= 0x7FF) {
+      outputString += dec2hex2(0xC0 | ((n>>6) & 0x1F)) + ' ' + dec2hex2(0x80 | (n & 0x3F));
+    } else if (n <= 0xFFFF) {
+      outputString += dec2hex2(0xE0 | ((n>>12) & 0x0F)) + ' ' + dec2hex2(0x80 | ((n>>6) & 0x3F)) + ' ' + dec2hex2(0x80 | (n & 0x3F));
+    } else if (n <= 0x10FFFF) {
+      outputString += dec2hex2(0xF0 | ((n>>18) & 0x07)) + ' ' + dec2hex2(0x80 | ((n>>12) & 0x3F)) + ' ' + dec2hex2(0x80 | ((n>>6) & 0x3F)) + ' ' + dec2hex2(0x80 | (n & 0x3F));
+    } else {
+      outputString += '!erreur ' + dhex(n) +'!';
+    }
+  }
+  return( outputString );
+}
+
+function  dec2hex2 ( argstr ) {
+  var hexequiv = new Array ("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F");
+  return hexequiv[(argstr >> 4) & 0xF] + hexequiv[argstr & 0xF];
+}
+
+function calstr (str)
+{ 
+	var haut = 0;
+	var n = 0;
+	CPstring = '';
+	for (var i = 0; i < str.length; i++)
+	{
+		var b = str.charCodeAt(i); 
+		if (b < 0 || b > 0xFFFF) {
+			CPstring += 'Error ' + dhex(b) + '!';
+		}
+		if (haut != 0) {
+			if (0xDC00 <= b && b <= 0xDFFF) {
+				CPstring += dhex(0x10000 + ((haut - 0xD800) << 10) + (b - 0xDC00)) + ' ';
+				haut = 0;
+				continue;
+				}
+			else {
+				CPstring += '!erreur ' + dhex(haut) + '!';
+				haut = 0;
+				}
+			}
+		if (0xD800 <= b && b <= 0xDBFF) {
+			haut = b;
+			}
+		else {
+			CPstring += dhex(b) + ' ';
+			}
+	}
+	CPstring = CPstring.substring(0, CPstring.length-1);
+	
+	var hex = convertCP2HexNCR(CPstring);
+	var eu = convertHex2EU(hex);
+	
+	document.uni.name2.value = convertCP2DecNCR(CPstring);
+	document.uni.name3.value = convertCP2HexNCR(CPstring);
+	document.uni.name4.value = convertCP2UTF8(CPstring);
+	document.uni.name5.value = eu;
+}
+
+
+function convertDecNCR2CP ( argstr ) {
+	CPstring = '';
+	argstr += ' ';
+	var tempString = '';
+	var charStr = '';
+	
+	for (var i=0; i<argstr.length-1; i++)
+	{   
+		if (i<argstr.length-3 && argstr.charAt(i) == '&' 
+			&& argstr.charAt(i+1) == '#' && argstr.charAt(i+2) in decDigit)
+		{ 
+			tempString = '';
+			i += 2;
+			while (i<argstr.length-1 && argstr.charAt(i) in decDigit) { 
+				tempString += argstr.charAt(i); 
+				i++;
+				}
+			if (argstr.charAt(i) == ';') { 
+				charStr += convertCP2Char(parseInt(tempString).toString(16));				}
+			else { charStr += '&#'+tempString; i--;}
+		}
+		else 
+		{ 
+			charStr += argstr.charAt(i);
+		}
+	} 
+		
+	CPstring = getCPfromChar( charStr ); 
+	CPstring = CPstring.substring(0, CPstring.length-1);
+	document.uni.name3.value = convertCP2HexNCR(CPstring);
+	document.uni.name4.value = convertCP2UTF8(CPstring);
+	document.uni.name1.value = convertCP2Char( CPstring );
+	
+	var hex = convertCP2HexNCR(CPstring);
+	var eu = convertHex2EU(hex);
+	document.uni.name5.value = eu;
+	
+}
+
+function convertCP2Char ( argstr ) {
+  var outputString = '';
+  argstr = argstr.replace(/^\s+/, '');
+  if (argstr.length == 0) { return ""; }
+  	argstr = argstr.replace(/\s+/g, ' ');
+  var listArray = argstr.split(' ');
+  for ( var i = 0; i < listArray.length; i++ ) {
+    var n = parseInt(listArray[i], 16);
+    if (n <= 0xFFFF) {
+      outputString += String.fromCharCode(n);
+    } else if (n <= 0x10FFFF) {
+      n -= 0x10000
+      outputString += String.fromCharCode(0xD800 | (n >> 10)) + String.fromCharCode(0xDC00 | (n & 0x3FF));
+    } else {
+      outputString += 'convertCP2Char error: Code point out of range: '+dhex(n);
+    }
+  }
+  return( outputString );
+}
+
+function getCPfromChar ( argstr ) {
+	var codepoint = "";
+	var haut = 0;
+	var n = 0; 
+	for (var i = 0; i < argstr.length; i++) {
+		var b = argstr.charCodeAt(i); 
+		if (b < 0 || b > 0xFFFF) {
+			codepoint += 'Error: Initial byte out of range in getCPfromChar: '+dhex(b);
+			}
+		if (haut != 0) { 
+			if (0xDC00 <= b && b <= 0xDFFF) {
+				codepoint += dhex(0x10000 + ((haut - 0xD800) << 10) + (b - 0xDC00)) + ' ';
+				haut = 0;
+				continue;
+				}
+			else {
+				codepoint += 'Error: Second byte out of range in getCPfromChar: '+dhex(haut);
+				haut = 0;
+				}
+			}
+		if (0xD800 <= b && b <= 0xDBFF) { 
+			haut = b;
+			}
+		else { 
+			codepoint += b.toString(16).toUpperCase()+' ';
+			}
+		} 
+	return codepoint;
+	}
+
+	
+function convertHexNCR2CP ( argstr ) {
+	CPstring = '';
+	argstr += ' ';
+	var tempString = '';
+	var charStr = '';
+	
+	for (var i=0; i<argstr.length-1; i++) {   
+		if (i<argstr.length-4 && argstr.charAt(i) == '&' 
+			&& argstr.charAt(i+1) == '#' && argstr.charAt(i+2) == 'x'
+			&& argstr.charAt(i+3) in hexNum) { // &#x
+			tempString = '';
+			i += 3;
+			while (i<argstr.length-1 && argstr.charAt(i) in hexNum) { 
+				tempString += argstr.charAt(i); 
+				i++;
+				}
+			if (argstr.charAt(i) == ';') {
+				charStr += convertCP2Char(tempString);
+				}
+			else { charStr += '&#x'+tempString; i--; }
+			}
+		else { 
+			charStr += argstr.charAt(i);
+			}
+		} 
+		
+	CPstring = getCPfromChar( charStr ); 
+	CPstring = CPstring.substring(0, CPstring.length-1);
+
+	document.uni.name2.value = convertCP2DecNCR(CPstring);
+	document.uni.name4.value = convertCP2UTF8(CPstring);
+	document.uni.name1.value = convertCP2Char( CPstring );
+	var s = convertHex2EU( argstr );
+	//alert(s);
+	document.uni.name5.value = s;
+	
+	argstr = argstr.replace(/\s+$/,"");
+	document.uni.name3.value = argstr;
+}
+
+function convertEU2CP ( argstr )
+{
+   argstr = argstr.replace(/\%/,"\\");  
+   var s = convertEU2Hex(argstr);
+   //alert(s);
+   convertHexNCR2CP(s);   
+}
+
+function convertEU2Hex(argstr)
+{
+    var s = argstr;
+	
+	s = s.replace(/\\u/g, ";&#x");
+	s = s.replace(/^;/, "");
+	s += ";";
+    //alert(s);	
+	
+	return s;
+}
+
+function convertHex2EU(argstr)
+{
+    var s = argstr;
+	
+	s = s.replace(/;&#/g, "\\u");
+	s = s.replace(/&#/, "\\u");
+	s = s.replace(/\\ux/g,"\\u");
+	s = s.replace(/;/g, "");
+	s = s.replace(/\s+$/,"");
+	//s += ";";
+    //alert(s);	
+	
+	return s;
+}
+
+
+function convertUTF82CP ( argstr ) {
+  var outputString = "";
+  CPstring = '';
+  var compte = 0;
+  var n = 0;
+  argstr = argstr.replace(/^\s+/, '');
+  argstr = argstr.replace(/ $/, '');
+  if (argstr.length == 0) { return ""; }
+  argstr = argstr.replace(/\s+/g, ' ');
+  var listArray = argstr.split(' ');
+  for ( var i = 0; i < listArray.length; i++ ) {
+    var b = parseInt(listArray[i], 16);   
+    switch (compte) {
+      case 0:
+        if (0 <= b && b <= 0x7F) {  
+          outputString += dhex(b) + ' ';
+        } else if (0xC0 <= b && b <= 0xDF) {  
+          compte = 1;
+          n = b & 0x1F;
+        } else if (0xE0 <= b && b <= 0xEF) {  
+          compte = 2;
+          n = b & 0xF;
+        } else if (0xF0 <= b && b <= 0xF7) { 
+          compte = 3;
+          n = b & 0x7;
+        } else {
+          outputString += '!erreur ' + dhex(b) + '! ';
+        }
+        break;
+      case 1:
+        if (b < 0x80 || b > 0xBF) {
+          outputString += '!erreur ' + dhex(b) + '! ';
+        }
+        compte--;
+        outputString += dhex((n << 6) | (b-0x80)) + ' ';
+        n = 0;
+        break;
+      case 2: case 3:
+        if (b < 0x80 || b > 0xBF) {
+          outputString += '!erreur ' + dhex(b) + '! ';
+        }
+        n = (n << 6) | (b-0x80);
+        compte--;
+        break;
+    }
+  }
+  
+    var CPstring = outputString;
+    CPstring = CPstring.replace(/ $/, '');
+
+	document.uni.name1.value = convertCP2Char( CPstring );
+	document.uni.name2.value = convertCP2DecNCR( CPstring );
+	document.uni.name3.value = convertCP2HexNCR( CPstring );
+	
+	var hex = convertCP2HexNCR(CPstring);
+	var eu = convertHex2EU(hex);
+	document.uni.name5.value = eu;
+	
+}
+
+
+function addsymbol(s)
+{
+    convertHexNCR2CP (s)	
+    //document.uni.name3.value = s;
+	calstr(document.uni.name1.value);
+	document.uni.name1.focus();
+ 
+ }
+</script>
+<script type="text/javascript">_uacct="UA-4671150-1";urchinTracker();</script>		
+	
+			
+			</body></html>    
