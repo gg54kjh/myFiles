@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <style>
+      #kinput, #conv {
+          font-size: 110%;
+          box-sizing: border-box;
+       }
+
+       #area {
+           width: 625px;
+           box-sizing: border-box;
+           height: 250px;
+           border: 1px solid black;
+           display: block;
+       }
+
+      form label {
+           display: inline;
+           white-space: nowrap;
+       }
+   </style>
+</head>
+
+<body style="margin-top: -15px" observset="1">
+
+  <form id="form" onsubmit="return false">
+    <label style="display: none">
+      <input name="keydownStop" value="1" type="checkbox"> keydown</label>&nbsp;&nbsp;&nbsp;
+    <label style="display: none">
+      <input name="keypressStop" value="1" type="checkbox"> keypress</label>&nbsp;&nbsp;&nbsp;
+    <label style="display: none">
+      <input name="keyupStop" value="1" type="checkbox"> keyup</label>
+
+    <p style="display: none">
+      Игнорировать:
+      <label>
+        <input name="keydownIgnore" value="1" type="checkbox"> keydown</label>&nbsp;&nbsp;&nbsp;
+      <label>
+        <input name="keypressIgnore" value="1" type="checkbox"> keypress</label>&nbsp;&nbsp;&nbsp;
+      <label>
+        <input name="keyupIgnore" value="1" type="checkbox"> keyup</label>
+    </p> 
+    
+     <p>
+      <input value="keyCode >key" style="margin-left:140px" onclick="keyCodeToName()" type="button"><br>
+      <input value="Hex >Dec" onclick="hexStringtoDecimal()" type="button">
+      <input id="conv" style="padding: 3px 0 1px 6px" type="text">
+      <input value="Dec >Hex" onclick="decimalToHexString()" type="button"><br>
+      <input value="charCode >key" onclick="charCodeToLetter()" style="margin-left:140px" type="button"> 
+     </p>
+    <input placeholder="Клавиши нажимать тут" id="kinput" style="width:288px" type="text" autofocus="">
+    <input value="Очистить" onclick="area.value = ''; this.previousElementSibling.value = ''; kinput.focus();document.querySelector('#conv').value=''" type="button">
+    <textarea id="area" style="height:189px"></textarea>
+    
+  </form>
+
+  
+  <script src="keyboard-events_files/script.js"></script>
+
+   <script>
+var kinput = document.getElementById('kinput');
+var area = document.getElementById('area');
+kinput.onkeydown = kinput.onkeyup = kinput.onkeypress = handle;
+
+var lastTime = Date.now();
+
+function handle(e) {
+  if (form.elements[e.type + 'Ignore'].checked) return;
+
+  var text = e.type +
+    ' keyCode=' + e.keyCode +
+    ' which=' + e.which +
+    ' key=' + e.key +
+    ' code=' + e.code +
+    (e.shiftKey ? ' +shift' : '') +
+    (e.ctrlKey ? ' +ctrl' : '') +
+    (e.altKey ? ' +alt' : '') +
+    (e.metaKey ? ' +meta' : '') + "\n";
+
+  if (area.value && Date.now() - lastTime > 250) {
+    area.value += new Array(81).join('-') + '\n';
+  }
+  lastTime = Date.now();
+
+  area.value += text;
+
+  if (form.elements[e.type + 'Stop'].checked) {
+    e.preventDefault();
+  }
+}
+   </script>
+
+  <script>
+    function decimalToHexString()  { 
+         var outp = document.querySelector('#conv'); 
+         var number =  Number(outp.value);
+         if (number < 0)  { number = 0xFFFFFFFF + number + 1; }
+              outp.value = number.toString(16).toUpperCase();
+    } 
+    
+    function hexStringtoDecimal() {
+         var outp = document.querySelector('#conv');
+         outp.value = parseInt( outp.value, 16)
+    }
+
+    function charCodeToLetter(){
+       var outp = document.querySelector('#conv');
+       outp.value = String.fromCharCode(outp.value) 
+    }
+    
+   function keyCodeToName(){
+        var outp = document.querySelector('#conv');
+        var str =
+"{{8<===>Backspace}}=={{9<===>Tab}}=={{13<===>Enter}}=={{16<===>Shift}}=={{17<===>Ctrl}}=={{18<===>Alt}}=={{19<===>Pause/Break only keyup}}=={{20<===>CapsLock}}=={{27<===>Esc}}=={{32<===>Space}}=={{33<===>PageUp}}=={{34<===>PageDown}}=={{35<===>End}}=={{36<===>Home}}=={{37<===>стрелка влево}}=={{38<===>стрелка вверх}}=={{39<===>стрелка вправо}}=={{40<===>стрелка вниз}}=={{44<===>PrintScreen only keyup}}=={{45<===>Insert}}=={{46<===>Delete}}=={{91<===>левая Windows}}=={{92<===>правая Windows}}=={{93<===>Applications}}=={{96<===>NumPad 0}}=={{97<===>NumPad 1}}=={{98<===>NumPad 2}}=={{99<===>NumPad 3}}=={{100<===>NumPad 4}}=={{101<===>NumPad 5}}=={{102<===>NumPad 6}}=={{103<===>NumPad 7}}=={{104<===>NumPad 8}}=={{105<===>NumPad 9}}=={{106<===>NumPad *}}=={{107<===>NumPad +}}=={{108<===>NumPad  Enter}}=={{109<===>NumPad -}}=={{110<===>NumPad .}}=={{111<===>NumPad /}}=={{112<===>F1}}=={{113<===>F2}}=={{114<===>F3}}=={{115<===>F4}}=={{116<===>F5}}=={{117<===>F6}}=={{118<===>F7}}=={{119<===>F8}}=={{120<===>F9}}=={{121<===>F10}}=={{122<===>F11}}=={{123<===>F12}}=={{144<===>NumLock}}=={{145<===>ScrollLock}}=={{186<===>;:}}=={{187<===>=+}}=={{188<===>,<}}=={{189<===>-_}}=={{190<===>.>}}=={{191<===>/?}}=={{192<===>`~}}=={{219<===>[{}}=={{220<===>\}}=={{221<===>]}}}=={{222<===>'}}=={{48<===>0}}=={{49<===>1}}=={{50<===>2}}=={{51<===>3}}=={{52<===>4}}=={{53<===>5}}=={{54<===>6}}=={{55<===>7}}=={{56<===>8}}=={{57<===>9}}=={{65<===>A}}=={{66<===>B}}=={{67<===>C}}=={{68<===>D}}=={{69<===>E}}=={{70<===>F}}=={{71<===>G}}=={{72<===>H}}=={{73<===>I}}=={{74<===>J}}=={{75<===>K}}=={{76<===>L}}=={{77<===>M}}=={{78<===>N}}=={{79<===>O}}=={{80<===>P}}=={{81<===>Q}}=={{82<===>R}}=={{83<===>S}}=={{84<===>T}}=={{85<===>U}}=={{86<===>V}}=={{87<===>W}}=={{88<===>X}}=={{89<===>Y}}=={{90<===>Z}}=="
+
+       outp.value = str.split('{{' +outp.value+ '<===>')[1].split('}}==')[0]
+
+  }
+</script>
+
+
+</body></html>
