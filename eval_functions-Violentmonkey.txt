@@ -81,6 +81,7 @@ var dc = document;
 <br>
 <a onclick="javascript:childs=document.querySelectorAll('li[class*=&quot;b-leaf-actions-expandchilds&quot;],[class*=&quot;2mdspost-comment-actions__item--expand&quot;]');for(i=0;i<40;i++)childs[i]?.children[0].click();void 0">&bull; Collapse new design</a>
 <br>
+<a>&bull; Change font</a>
  </div>
 <div id="zakr">закрыть</div>
 <style>#bookm {position:fixed; top:20px; left:650px; background:snow; z-index:20000}
@@ -141,6 +142,9 @@ setTimeout(()=>{
         })(commentboxes[z]), 500)
     }
   })
+  ln[12].addEventListener('click', ()=> {
+     var d=document,els=d.querySelectorAll('p,li,td,article,a div, a span,h1,h2,h3,h4,h5,h6');d.body.insertAdjacentHTML('beforeend',`<table id="myTB"class="mydiv_class"><style>#myTB{position:fixed;top:15px;max-width:fit-content;left:15px;z-index:99999;background:azure;outline:ridge 8px}#myTB td{padding:5px 25px;cursor:default;text-align:center;border:1px solid}#myTB td:hover{background:#D13BFB}</style><tr><td>verdana</td><td>arial</td><td>open sans</td><td>ms reference sans serif</td><td>reset</td><td style="background:red">Close</td></tr></table>`);v=p=>{for(var w of els)w.style.setProperty('font-family',p,'important')};td=[...d.querySelectorAll('#myTB td')];td.forEach(function(it){it.onclick=function(){v(this.innerHTML)}});td.at(-2).onclick=()=>v('');td.at(-1).onclick=()=>document.querySelector('#myTB').remove(); document.querySelector('#bookm').remove()
+  })
 }, 1000);
   function setMover() {
     var d = document.querySelector('#bookm'),
@@ -186,5 +190,3 @@ setTimeout(()=>{
 }, 50)
 })()
 @@@@@
-
-
