@@ -1,0 +1,78 @@
+@@@@@get Text Content    // -----------   Получение Text Content
+(()=> {
+let X, Y, a, txt, div, padding = '20px;';
+document.addEventListener('mousemove', e => {
+   X = e.x;
+   Y = e.y;
+   a = e.target;
+   unboard = () => {
+      div.remove();
+      a.style.border = '';
+      if (a.style.length == '') a.removeAttribute('style');
+   }
+   a.style.border = '1px red solid';
+   if (a.textContent != '') {
+      if (a.matches('select'))
+         txt = '[ ' + a.tagName + ' ]<br>' + a.textContent;
+      else
+         !a.value && (txt = '[ ' + a.tagName + ' ]<br><br>' + a.innerText);
+   }
+   if (a.value && !a.matches('select'))
+      txt = '[ ' + a.tagName + ' ]*** Value<br><br>' + a.value;
+
+   if (a.textContent == '' && !a.value && a.placeholder)
+      txt = '[ ' + a.tagName + ' ]*** Placeholder<br><br>' + a.placeholder;
+
+   if (a.textContent == '' && !a.value && !a.placeholder) {
+      if (getComputedStyle(a).position == 'absolute' &&
+         !document.elementsFromPoint(X, Y).some(x => x.tagName == 'IMG')) {
+         var el = document.elementFromPoint(X, Y);
+         var closest = function(el) {
+            while (el) {
+               if (el.textContent && el.textContent.match(/[А-Яа-я\w]+/)) {
+                  break;
+               }
+               el = el.parentElement;
+            }
+            return '[ ' + el.tagName + ' ] target pos.=absolute, ' +
+               'взят ближайш. родитель с текстом<br><br>' + el.innerText;
+         };
+         txt = closest(el).trim()
+      } else txt = '[ ' + a.nodeName + ' ]<br><br>NO Textcontent!!';
+   }
+   div = document.body.appendChild(document.createElement('div'));
+   div.id = 'txtcnt';
+   div.className = 'mydiv_class _mydrg_';
+   if (window.top != window.self) padding = '8px 12px;';
+   div.style.cssText = 'position:absolute; background:#FFFCDD; z-index:2147483647; padding:' +
+      padding + 'top:' + (e.pageY - 25) + 'px; left:' + (e.pageX + 25) + 'px;' +
+      'border:1px solid; text-align:start; max-height:300px; word-wrap:break-word;' +
+      'overflow-y:auto; line-height:normal !important; color:#000';
+   setTimeout(() => {
+      var rect = div.getBoundingClientRect(),
+         raznY = rect.bottom - document.documentElement.clientHeight,
+         oldTop = rect.top,
+         raznX = rect.right - document.documentElement.clientWidth;
+      if (window.top == window.self) {
+         if (raznX > 0) {
+            div.style.cssText += '; right:2px; left:unset; max-width:800px';
+         }
+         if (raznY > 0) {
+            div.style.top = (oldTop - raznY + window.scrollY - 20) + 'px';
+         }
+      } else {
+         if (rect.right > document.body.getBoundingClientRect().right)
+            div.style.cssText += '; left:1px';
+         var raznY_ = div.getBoundingClientRect().bottom - window.innerHeight;
+         if (raznY_ > 0)
+            div.style.top = parseInt(div.style.top) - raznY_ + 'px';
+         if (parseInt(div.style.top) < 0)
+            div.style.top = '1px';
+         if (rect.height > document.documentElement.clientHeight)
+            div.style.maxHeight = document.documentElement.clientHeight - 2 + 'px';
+      }
+   }, 0);
+   div.innerHTML = txt.replaceAll('\n', '<br>');
+   createProzr(div)
+}, {once:true})})()
+@@@@@
