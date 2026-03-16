@@ -39,7 +39,7 @@ setTimeout(()=>{if(raznV>0) {d.style.top='unset'; d.style.bottom='3px'}}, 0);
 if(d.getBoundingClientRect().top<0)  d.style.top = '5px';
 var a=doc.activeElement, se=String((a.contentWindow||window).getSelection()),
     s = se || a.value?.substring(a.selectionStart, a.selectionEnd);
-var openPage = url => open(url);
+var openPage = url => GM_openInTab(url);
 var remMoDown = fn => { d.remove();  doc.removeEventListener('mousedown', fn) };
 doc.addEventListener('mousedown', rer=e=>{
     if (!d.contains(e.target))  remMoDown(rer);
