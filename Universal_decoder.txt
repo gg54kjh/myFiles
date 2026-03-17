@@ -37,8 +37,10 @@
     <div><input type="button" class="l" value="dec.Base64">
 <input value="Clear All" style="margin-left: 95px;"  
     onclick="document.querySelector('#ta').value=''; document.querySelector('#outp').innerHTML=''"  type="button">
-    <input type="button" class="r" value="enc.Base64"></div><p><a href="http://www.codenet.ru/services/urlencode-urldecode/"
-         target="_blank">http://www.codenet.ru/services/urlencode-urldecode</a></p>
+    <input type="button" class="r" value="enc.Base64"></div>
+   <p>On-line decoder 
+    <a href="http://www.codenet.ru/services/urlencode-urldecode/"
+         target="_blank">http://www.codenet.ru/services/urlencode-urldecode</a>      </p>
 </div>
 
 <script  type="text/javascript" >
