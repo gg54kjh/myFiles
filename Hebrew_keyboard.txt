@@ -255,6 +255,9 @@
 <div class="branah-clear"></div></div>
 
         </div>
+<br>
+On-line keyboard
+  <a target="_blank" href="https://www.branah.com/hebrew">https://www.branah.com/hebrew</a>
    </div>
 
 <script>
@@ -360,6 +363,5 @@ table.querySelector('#b2').onclick=function(){
 }
 
 </script>
-
 </body></html>
 
