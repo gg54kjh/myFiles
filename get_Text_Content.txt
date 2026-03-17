@@ -68,6 +68,6 @@ document.addEventListener('mousemove', e => {
       }
    }, 0);
    div.innerHTML = txt.replaceAll('\n', '<br>');
-   createProzr(div)
+   createProzr(div, a)
 }, {once:true})})()
 @@@@@
