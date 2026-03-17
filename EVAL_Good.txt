@@ -14,6 +14,7 @@ var dc = document;
     ` )
  var div = dc.getElementById('my_vr'), clk1 = dc.getElementById('clock1'),
       clk2 = dc.getElementById('clock2');  getVremya();
+  createProzr(div);
  function getVremya(){ 
      var dt = new Date(),
            x=dt.toLocaleString('ru', {
@@ -34,7 +35,7 @@ var dc = document;
   dc.body.addEventListener('mousedown', function mnn(e) {
             if (!div.contains(e.target)) {
                 div.remove();  e.currentTarget.removeEventListener('mousedown', mnn);  clearInterval(int); int = null
-  } } ); createProzr(div)
+  } } )
 })()
 @@@@@Remove Sticky
 (()=> {
