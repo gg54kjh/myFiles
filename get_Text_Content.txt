@@ -5,11 +5,6 @@ document.addEventListener('mousemove', e => {
    X = e.x;
    Y = e.y;
    a = e.target;
-   unboard = () => {
-      div.remove();
-      a.style.border = '';
-      if (a.style.length == '') a.removeAttribute('style');
-   }
    a.style.border = '1px red solid';
    if (a.textContent != '') {
       if (a.matches('select'))
