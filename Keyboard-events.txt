@@ -56,7 +56,12 @@
     
   </form>
 
-  
+  <p>
+    On-line keyboard stand
+    <a target="_blank" href="https://codeshack.io/keyboard-event-tester/">
+      https://codeshack.io/keyboard-event-tester/</a>
+  </p>
+
   <script src="keyboard-events_files/script.js"></script>
 
    <script>
