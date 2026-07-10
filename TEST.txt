@@ -120,7 +120,7 @@ v - показать искомый селектор`;
 
       function scroll(el, border) {
          var opa = el.style.opacity != '' ? el.style.opacity : 1,
-            re = el.getBoundingClientRect(),
+            re = el.getBoundingClientRect();
          if (re.top <= 0 || re.bottom >= window.innerHeight) {
             el.scrollIntoView();
             scrollBy(0, -50)
