@@ -5,12 +5,6 @@ document.body.insertAdjacentHTML('beforeend',
     #oo5 input{width:500px; background:pink}
     #oo5 button{font-size:30px;padding:2px 20px}
     #oo5 br+button{background:blue;margin-left:100px}
-    @keyframes blink {
-      50% { opacity: 0 }
-    }
-    .flash {
-      animation: blink 0.25s step-start 5
-    } 
    </style>
    <center style="padding-top:150px">
     <input type="text" placeholder="jQuery"><br><button id="bt1_">OK</button>
@@ -52,7 +46,7 @@ function gener() {
          elms = [...d.querySelectorAll(p)],
          a = -1;
       jQuery('body').append(
-         '<span class="oo5"></span><style class="oo5">span.oo5{position:fixed;left:2px;top:2px;color:#000;background:azure;padding:4px;z-index:2147483647;font-weight:700;font-size:1.7em}.fatbrd{border:3px solid crimson!important;outline:7px red solid!important;outline-offset:3px!important}</style>');
+         '<span class="oo5"></span><style class="oo5">span.oo5{position:fixed;left:2px;top:2px;color:#000;background:azure;padding:4px;z-index:2147483647;font-weight:700;font-size:1.7em}.fatbrd{border:3px solid crimson!important;outline:7px red solid!important;outline-offset:3px!important}@keyframes blink{50%{opacity:0}}.flash{animation:blink 0.25s step-start 5}</style>');
       var sp = document.querySelector('span.oo5');
       sp.ondblclick = function() {
          var s = this.style;
@@ -108,7 +102,10 @@ v - показать искомый селектор`;
       }
 
       function upd(a) {
-         sp.innerHTML = (a + 1) + '/' + elms.length
+        var e_ = elms[a],
+          f = (e_.offsetWidth>0 && e_.offsetWidth<4) ? ' w:' +e_.offsetWidth : '',
+          d =  (e_.offsetHeight>0 && e_.offsetHeight<4) ? ' h:' +e_.offsetHeight : '';
+        sp.innerHTML = (a + 1)+ '/' + elms.length + f + d;           
       }
 
       function chekInv() {
@@ -123,7 +120,7 @@ v - показать искомый селектор`;
             re = el.getBoundingClientRect();
          if (re.top <= 0 || re.bottom >= window.innerHeight) {
             el.scrollIntoView();
-            scrollBy(0, -50)
+            scrollBy(0, -100)
          }
          el.classList.add('flash'); 
          setTimeout(()=>{
@@ -172,11 +169,8 @@ v - показать искомый селектор`;
             dv.style.left = rec.left + window.scrollX + 'px';
             dv.style.width = rec.width + 'px';
             dv.style.height = rec.height + 'px';
-            if (u.offsetWidth==1) dv.style.width='10px'; 
-            if (u.offsetHeight==1) dv.style.height='10px';
-            if (u.offsetWidth==1 && u.offsetHeight==1) {
-               dv.style.cssText += 'width:20px; height:20px; transform: translate(-10px, -10px)'
-            }
+            if (u.offsetWidth==1) dv.style.cssText+=';width:20px; transform: translateX( -10px)'; 
+            if (u.offsetHeight==1) dv.style.cssText+=';height:20px; transform: translateY( -10px)';
             d.body.append(dv);
             dv.className = 'oo5';
             scroll(dv)
@@ -221,7 +215,7 @@ v - показать искомый селектор`;
          if (f.keyCode == 192) scroll(elms[a], 'border');
          if (f.keyCode == 73) overlay(elms[a]);
          if (f.keyCode == 90) zIndex();
-         if (f.code == "KeyC") { 
+         if (f.code == "KeyK") { 
            sc.flag=1; setTimeout(()=>sc.flag=null, 2000);
            setTimeout(console.log.bind(console, '%c op.All-github', 'color:limegreen; font-family:arial;font-weight:800', elms[a]));
            setTimeout(()=>top.postMessage('postMsg$$$Global keydown_pageutils###0x4B###ctrl###shift', '*'), 800)
@@ -229,4 +223,3 @@ v - показать искомый селектор`;
          if (f.code == "KeyV") chto_Iszhem() 
       })
 }
-
