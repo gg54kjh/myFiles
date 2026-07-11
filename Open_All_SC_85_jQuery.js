@@ -54,10 +54,10 @@ function gener() {
             (s.left = '2px', s.top = '2px');
       };
       sp.title =
-         `тильда - многокр. мигание текущ. эл-та + утолщ. border
-I - зелёный overlay на месте скрытого эл-та
+         `тильда || стр. влево - многокр. мигание текущ. эл-та + утолщ. border
+I || стр. вправо - зелёный overlay на месте скрытого эл-та
 z - эл-т получает z-index MAX
-k - эл-т => в консоль
+k || верхн. insert - эл-т > в консоль
 v - показать искомый селектор`;
 
       function handleOutline(arg) {
@@ -212,10 +212,11 @@ v - показать искомый селектор`;
          }
          if (f.shiftKey) sc('up');
          if (f.ctrlKey) sc('down');
-         if (f.keyCode == 192) scroll(elms[a], 'border');
-         if (f.keyCode == 73) overlay(elms[a]);
+         if (f.code=='Backquote' || f.code=='ArrowLeft') scroll(elms[a], 'border');
+         if (f.code=='KeyI' || f.code=='ArrowRight') overlay(elms[a]);
          if (f.keyCode == 90) zIndex();
-         if (f.code == "KeyK") { 
+         if (f.code=="KeyK" || f.code=='Insert') {
+           if (sc.flag==1) return;
            sc.flag=1; setTimeout(()=>sc.flag=null, 2000);
            setTimeout(console.log.bind(console, '%c op.All-github', 'color:limegreen; font-family:arial;font-weight:800', elms[a]));
            setTimeout(()=>top.postMessage('postMsg$$$Global keydown_pageutils###0x4B###ctrl###shift', '*'), 800)
