@@ -41,10 +41,10 @@ function gener() {
             (s.left = '2px', s.top = '2px');
       };
       sp.title =
-         `тильда или стр. влево - многокр. мигание текущ. эл-та + утолщ. border
-I или стр. вправо - зелёный overlay на месте скрытого эл-та
+         `тильда || стр. влево - многокр. мигание текущ. эл-та + утолщ. border
+I || стр. вправо - зелёный overlay на месте скрытого эл-та
 z - эл-т получает z-index MAX
-k - эл-т => в консоль
+k || верхн. Insert - эл-т => в консоль
 v - показать искомый селектор`;
 
       function handleOutline(arg) {
@@ -206,7 +206,7 @@ v - показать искомый селектор`;
          if (f.code=='Backquote' || f.code=='ArrowLeft') scroll(elms[a], 'border');
          if (f.code=='KeyI' || f.code=='ArrowRight') overlay(elms[a]);
          if (f.keyCode == 90) zIndex();
-         if (f.code == "KeyK") {
+         if (f.code == "KeyK" || f.code=="Insert") {
            if (sc.flag==1) return; 
            sc.flag=1; setTimeout(()=>sc.flag=null, 2000);
            setTimeout(console.log.bind(console, '%c op.All-github', 'color:limegreen; font-family:arial;font-weight:800', elms[a]));
