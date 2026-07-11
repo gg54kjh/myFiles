@@ -46,7 +46,7 @@ function gener() {
          elms = [...d.querySelectorAll(p)],
          a = -1;
       jQuery('body').append(
-         '<span class="oo5"></span><style class="oo5">span.oo5{position:fixed;left:2px;top:2px;color:#000;background:azure;padding:4px;z-index:2147483647;font-weight:700;font-size:1.7em}.fatbrd{border:3px solid crimson!important;outline:7px red solid!important;outline-offset:3px!important}</style>');
+         '<span class="oo5"></span><style class="oo5">span.oo5{position:fixed;left:2px;top:2px;color:#000;background:azure;padding:4px;z-index:2147483647;font-weight:700;font-size:1.7em}.fatbrd{border:3px solid crimson!important;outline:7px red solid!important;outline-offset:3px!important}@keyframes blink{50%{opacity:0}}.flash{animation:blink 0.25s step-start 5}</style>');
       var sp = document.querySelector('span.oo5');
       sp.ondblclick = function() {
          var s = this.style;
@@ -89,20 +89,23 @@ v - показать искомый селектор`;
          if (arg == 'down') {
             if ((a + 1) == elms.length) a = -1;
             a++; 
-            chekInv()==2 ? flash('#FFFF00') : scroll(elms[a], 5); 
+            chekInv()==2 ? flash('#FFFF00') : scroll(elms[a]); 
             upd(a);
          }
          if (arg == 'up') {
             if (a == -1) return;
             if (a == 0) a = elms.length;
             a--; 
-            chekInv()==2 ? flash('#FFFF00') : scroll(elms[a], 5); 
+            chekInv()==2 ? flash('#FFFF00') : scroll(elms[a]); 
             upd(a);
          }
       }
 
       function upd(a) {
-         sp.innerHTML = (a + 1) + '/' + elms.length
+        var e_ = elms[a],
+          f = (e_.offsetWidth>0 && e_.offsetWidth<4) ? ' w:' +e_.offsetWidth : '',
+          d =  (e_.offsetHeight>0 && e_.offsetHeight<4) ? ' h:' +e_.offsetHeight : '';
+        sp.innerHTML = (a + 1)+ '/' + elms.length + f + d;           
       }
 
       function chekInv() {
@@ -112,31 +115,22 @@ v - показать искомый селектор`;
          }
       }
 
-      function scroll(el, count, border) {
+      function scroll(el, border) {
          var opa = el.style.opacity != '' ? el.style.opacity : 1,
-            re = el.getBoundingClientRect(),
-            i = 0;
+            re = el.getBoundingClientRect();
          if (re.top <= 0 || re.bottom >= window.innerHeight) {
             el.scrollIntoView();
-            scrollBy(0, -50)
+            scrollBy(0, -100)
          }
+         el.classList.add('flash'); 
+         setTimeout(()=>{
+           el.classList.remove('flash');
+           el.style.opacity = opa;
+           el.classList.contains('fatbrd') && el.classList.remove('fatbrd') 
+         }, 1700);       
          if (border == 'border') {
             el.classList.toggle('fatbrd')
          }
-         (function fn() {
-            if (i == count) {
-               i = 0; el.style.opacity = opa;
-               return
-            }
-            setTimeout(() => {
-               el.style.opacity = 0
-            }, 120);
-            setTimeout(() => {
-               el.style.opacity = 1;
-               i++;
-               fn()
-            }, 220)
-         })()
       }
 
       function doVisible(el) {
@@ -175,9 +169,11 @@ v - показать искомый селектор`;
             dv.style.left = rec.left + window.scrollX + 'px';
             dv.style.width = rec.width + 'px';
             dv.style.height = rec.height + 'px';
+            if (u.offsetWidth==1) dv.style.cssText+=';width:20px; transform: translateX( -10px)'; 
+            if (u.offsetHeight==1) dv.style.cssText+=';height:20px; transform: translateY( -10px)';
             d.body.append(dv);
             dv.className = 'oo5';
-            scroll(dv, 6)
+            scroll(dv)
          }
       }
      function closest (elm) {
@@ -194,7 +190,7 @@ v - показать искомый селектор`;
          } else {
             x.style.zIndex = '2147483647';
             x.style.position = 'relative';
-            scroll(x, 5)
+            scroll(x)
          }
       }
       function chto_Iszhem() {
@@ -216,10 +212,10 @@ v - показать искомый селектор`;
          }
          if (f.shiftKey) sc('up');
          if (f.ctrlKey) sc('down');
-         if (f.keyCode == 192) scroll(elms[a], 10, 'border');
+         if (f.keyCode == 192) scroll(elms[a], 'border');
          if (f.keyCode == 73) overlay(elms[a]);
          if (f.keyCode == 90) zIndex();
-         if (f.code == "KeyC") { 
+         if (f.code == "KeyK") { 
            sc.flag=1; setTimeout(()=>sc.flag=null, 2000);
            setTimeout(console.log.bind(console, '%c op.All-github', 'color:limegreen; font-family:arial;font-weight:800', elms[a]));
            setTimeout(()=>top.postMessage('postMsg$$$Global keydown_pageutils###0x4B###ctrl###shift', '*'), 800)
@@ -227,9 +223,3 @@ v - показать искомый селектор`;
          if (f.code == "KeyV") chto_Iszhem() 
       })
 }
-
-
-
-
-
-
