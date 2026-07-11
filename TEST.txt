@@ -9,7 +9,7 @@ document.body.insertAdjacentHTML('beforeend',
       50% { opacity: 0 }
     }
     .flash {
-      animation: blink 0.25s step-start 5
+      animation: blink 0.25s step-start infinite
     } 
    </style>
    <center style="padding-top:150px">
