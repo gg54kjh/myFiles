@@ -128,7 +128,7 @@ v - показать искомый селектор`;
          el.classList.add('flash'); 
          setTimeout(()=>{
            el.classList.remove('flash');
-           el.style.opacity = opa;
+          /* el.style.opacity = opa;*/
            el.classList.contains('fatbrd') && el.classList.remove('fatbrd') 
          }, 1700);       
          if (border == 'border') {
